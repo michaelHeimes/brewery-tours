@@ -2,11 +2,29 @@
 // Register menus
 register_nav_menus(
 	array(
+		'util-nav'		=> __( 'The Utility Menu', 'jointswp' ),		// Utility nav in header
 		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
-		'footer-links'	=> __( 'Footer Links', 'jointswp' )			// Secondary nav in footer
+		'footer-tours'	=> __( 'Footer Tours', 'jointswp' ),		// Secondary nav in footer		
+		'footer-links'	=> __( 'Footer Links', 'jointswp' ),		// Secondary nav in footer
+		'social-links'	=> __( 'Social Links', 'jointswp' ),		// Secondary nav in footer		
+		'review-links'	=> __( 'Review Links', 'jointswp' )		    // Secondary nav in footer		
 	)
 );
+
+// The Utility Menu
+function joints_util_nav() {
+	wp_nav_menu(array(
+		'container'			=> false,						// Remove nav container
+		'menu_id'			=> 'utility-nav',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+		'theme_location'	=> 'util-nav',					// Where it's located in the theme
+		'depth'				=> 5,							// Limit the depth of the nav
+		'fallback_cb'		=> false,						// Fallback function (see below)
+		'walker'			=> new Topbar_Menu_Walker()
+	));
+}
 
 // The Top Menu
 function joints_top_nav() {
@@ -14,7 +32,7 @@ function joints_top_nav() {
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'main-nav',					// Adding custom nav id
 		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true" data-hover-delay="0" data-closing-time="0">%3$s</ul>',
 		'theme_location'	=> 'main-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
@@ -51,6 +69,18 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
+// The Footer Tour Menu
+function joints_footer_tours_links() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'footer-tours',		// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'footer-tours',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Footer Menu */
+
 // The Footer Menu
 function joints_footer_links() {
 	wp_nav_menu(array(
@@ -62,6 +92,30 @@ function joints_footer_links() {
 		'fallback_cb'		=> ''					// Fallback function
 	));
 } /* End Footer Menu */
+
+// The Social Links Menu
+function joints_social_links() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'social-links',		// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'social-links',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Social Links Menu */
+
+// The Review Links Menu
+function joints_review_links() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'review-links',		// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'review-links',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Social Links Menu */
 
 // Header Fallback Menu
 function joints_main_nav_fallback() {
@@ -89,3 +143,114 @@ function required_active_nav_class( $classes, $item ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
+
+
+
+
+
+
+
+// Add ACF Fields to Main Nav
+
+
+
+	function my_wp_nav_menu_objects( $items, $args ) {
+		
+		if ( $args->theme_location == 'main-nav' ) {
+			
+			// loop
+			foreach( $items as &$item ) {
+				
+				// vars
+				$icon = get_field('icon', $item);
+				$bg_img = get_field('dropdown_background_image', $item);
+				$size = 'full';
+				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
+						
+				// append icon
+				if( $icon ) {
+					
+					$item->title = '<span class="title-icon-wrap"><span class="icon" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span>' . $item->title . '</span>';
+					
+				}
+				
+				// append bg image
+				if( $bg_img ) {
+					
+					$item->title = '<div class="bg" style="background-image: url(' . $imgArr[0] . ')"></div><span class="title-icon-wrap">' . $item->title . '</span>';
+					
+				}	
+				
+			}
+			
+			
+			// return
+			return $items;
+				
+		} elseif ( $args->theme_location == 'social-links' || $args->theme_location == 'review-links' ) {
+
+			// loop
+			foreach( $items as &$item ) {
+				
+				// vars
+				$icon = get_field('icon', $item);
+				$size = 'full';
+						
+				// append icon
+				if( $icon ) {
+					
+					$item->title = '<span class="icon" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="show-for-sr"' . $item->title . '</span>';
+					
+				}
+				
+			}
+			
+			
+			// return
+			return $items;			
+			
+		} else {			
+			// loop
+			foreach( $items as &$item ) {}
+			return $items;	
+		}
+		
+	}
+	
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+
+/*
+add_filter('nav_menu_item_args', function ($args, $item, $depth) {
+    if ($args->theme_location == 'main-nav') {
+        $title             = apply_filters('the_title', $item->title, $item->ID);
+        $args->link_before = '<span data-hover="' . $title . '">';
+        $args->link_after  = '</span>';
+    }
+    return $args;
+}, 10, 3);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

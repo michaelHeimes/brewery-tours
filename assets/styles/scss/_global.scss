@@ -5,6 +5,41 @@ Stylesheet: Global Stylesheet
 *************************************************/
 
 /*********************
+COMMON STYLES
+*********************/
+.has-bg {
+	position: relative;	
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.blue-bg {
+	background-color: $brand-blue;
+	color: $white;	
+}
+
+/*********************
+TYPOGRAPHY STYLES
+*********************/
+
+p,
+.p,
+ol,
+ul {
+	font-size: rem-calc(19);
+	line-height: 1.947
+}
+
+/*********************
 POSTS & CONTENT STYLES
 *********************/
 .page-title {

@@ -10,34 +10,45 @@ jQuery( document ).ready(function($) {
 		
 	};
 	
-	_app.fixed_nav_hack = function() {
+	_app.mobile_nav = function() {
 		$(document).on('click', 'a#menu-toggle', function(){
 			
 			if ( $(this).hasClass('clicked') ) {
 				$(this).removeClass('clicked');
-				$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
+				$('#off-canvas').fadeOut(200);
 			
 			} else {
 			
 				$(this).addClass('clicked');
-				$('header.header').addClass('off-canvas-content is-open-right has-transition-push');
+				$('#off-canvas').fadeIn(200);
 			
 			}
 			
 		});
+	}
 	
-		$(document).on('click', '.js-off-canvas-overlay', function(){
-			$('a#menu-toggle').removeClass('clicked');
-			$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
-		});
-
+	_app.towns_dropdown = function() {
+		if($('#towns-dropdown').length ){
+			
+			var setWidth = function() {
+				buttonWidth = $('.button.dropdown-btn').outerWidth();
+				$('#towns-dropdown').css('width', buttonWidth);
+			};
+			setWidth();
+			
+			$(window).resize(function() {
+				setWidth();
+			});
+			
+		}
 	}
 			
 	_app.init = function() {
 		
 		// Standard Functions
 		_app.emptyParentLinks();
-		_app.fixed_nav_hack();
+		_app.mobile_nav();
+		_app.towns_dropdown();
 	}
 
 

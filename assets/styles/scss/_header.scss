@@ -1,100 +1,226 @@
 header.header {
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
 	transition: transform .5s ease;
 	
 	.top-bar-wrap {
-		background-color: $topbar-background;
-	}
-	
-	#top-bar-menu {
-		padding-top: .2rem;
-		padding-bottom: .2rem;
+		padding: 1rem 1.4rem 1rem 1.75rem;
+		height: 76px;
+		background-color: $brand-blue;
 		
-		@include breakpoint(tablet) {
-			padding-top: .35rem;
-			padding-bottom: 0;
+		@include breakpoint(xlarge) {
+			padding: 0;
+			height: 108px;
+			background-color: transparent;
+		}
+		
+		.top-bar {
+			align-items: center;
+			height: 100%;
+			padding: .2rem 0;
+			
+			@include breakpoint(xlarge) {
+				align-items: flex-end;				
+				padding-top: 0;
+				padding-bottom: 0;
+			}
 		}
 		
 		.top-bar-left {
+			background-color: $brand-blue;
+		    height: 100%;
+		    display: flex;
+		    align-items: center;
+			flex: 0 0 auto;
+			width: auto;
 			max-width: 160px;
 			
 			@include breakpoint(medium) {
 				max-width: 100%;
 			}
 			
+			@include breakpoint(xlarge) {
+			    border-width: 0 1px 1px 0;
+			    border-style: solid;
+			    border-color: $light-gray;				
+			}
+		    
+		    .menu {
+			    height: 100%;
+		    }
+		    
+			li.logo {
+				
+				&.desktop {
+					a {
+						padding: 0;
+						display: inline-block;
+						position: relative;
+						height: 100%;
+					    display: flex;
+					    align-items: center;
+					    
+					    @include breakpoint(xlarge) {
+					    	padding: 1rem 2.7rem 1rem 2rem;		
+					    }		
+					}
+				}
+				
+			}
+		    
 		}
 		
-		li.logo {
+		.top-bar-right {
+			flex: 1 1 0px;
 			
-			&.desktop {
-				a {
-					padding: 0;
-					display: inline-block;
-					position: relative;
-				    top: -20px;
-				}
-			}
-			
-		}
-			
-		#main-nav {
-			align-items: center;
-			>li {
-				margin: 1.05rem 0 1.3rem 1.8rem;
+			.top {
+				height: 37px;
+				border-bottom: 1px solid $light-gray;
 				
-				a {
-					color: $white;
-					font-size: rem-calc(18);
-					text-transform: uppercase;
-					letter-spacing: .075px;
-					
-					@include breakpoint(large) {
-						font-size: rem-calc(22);
-					}
-					
-				&:hover {
-					text-decoration: underline;
-				}
-					
-				}
-				
-			&.menu-item-has-children {
-				margin-top: -.4rem;
-				margin-bottom: 0;
-			
-				a {
-					padding-right: 2.28rem;
-					
-					&:after {
-						right: 12px;
-						width: 10px;
-						height: 5px;
-						border: 0;
-						background-size: contain;
-					    background-position: center;
-					    background-repeat: no-repeat;						
-// 						background-image: url(../images/chev-down-white.svg);
-					}
-					
-				}
-				
-				ul.submenu {
+				ul#utility-nav {
+				    display: flex;
+					justify-content: flex-end;
 					li {
 						a {
-
-							
-						&:hover {
-
+							color: $white;
+							font-size: rem-calc(13);
+							line-height: 1.15;
+							letter-spacing: .05px;
+							font-weight: 500;
+							text-transform: uppercase;
 						}
-							
-						}
-						
 					}
 				}
-	
 			}
+			
+			.bottom {
+				height: 71px;
+				border-bottom: 1px solid $light-gray;
+				display: flex;
+				justify-content: space-between;
+				
+				.links-wrap {
+				    display: flex;
+				    align-items: center;
+				    
+				    ul#main-nav {
+						height: 100%;
+						align-items: center;
+						
+						> li {
+							height: 100%;
+						    display: flex;
+						    align-items: center;							
+							> a {
+								border-right: 1px solid $light-gray;
+								font-family: $header-font-family;
+								color: $white;
+								font-size: rem-calc(20);
+								text-transform: uppercase;
+								letter-spacing: .05px;
+								padding: .5rem 1.65rem .5rem 2.75rem;
+								height: 100%;
+								
+								@include breakpoint(large) {
+									font-size: rem-calc(20);
+								}
+								
+							&:hover {
+								&:after {
+									transform: translateX(10px);	
+								}
+							}
+															
+							}
 							
+						&.menu-item-has-children {
+							margin-bottom: 0;
+						
+							a {
+								display: flex;
+								align-items: center;
+								
+								&:after {
+									position: static;
+									margin-left: .82rem;
+									width: 8px;
+									height: 13px;
+									border: 0;
+									background-size: contain;
+								    background-position: center;
+								    background-repeat: no-repeat;						
+									background-image: url(../images/chev-right.svg);
+									transition: transform .3s ease;
+								}
+								
+							}
+							
+							ul.submenu {
+								position: fixed;
+							    left: 0;
+							    right: 0;
+							    top: 107px;
+							    flex-direction: row;
+							    
+							&.is-dropdown-submenu.js-dropdown-active {
+							    display: flex;
+							}
+							    
+								li {
+									flex: 0 1 auto;
+									a {
+										min-height: 174px;
+										position: relative;
+										font-family: $header-font-family;
+										color: $white;
+										font-size: rem-calc(27);
+										text-transform: uppercase;
+										letter-spacing: .05px;
+										line-height: 1.1851;
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										
+										span.icon {
+											display: none;
+										}
+										
+										span.title-icon-wrap {
+											position: relative;
+										}
+										
+									&:hover {
+			
+									}
+										
+									}
+									
+								}
+							}
+				
+						}
+							
+						}
+					}
+				    
+				}
+				
+				.button {
+					border-left: 1px solid $light-gray;
+					min-width: 159px;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				}
+				
 			}
+			
 		}
+		
+	}
+	
+	#top-bar-menu {
 		
 		.menu-toggle-wrap {
 		    width: auto;
@@ -113,9 +239,11 @@ header.header {
 				    width: 36px;
 				    height: 4px;
 				    background-color: $white;
+				    transition: all .3s ease;
 				    
 				    &:nth-child(1) {
 					    top: 4px;
+					    transform: translate(0px, 0px) rotate(0deg);
 				    }
 
 				    &:nth-child(2) {
@@ -124,9 +252,31 @@ header.header {
 				    
 				    &:nth-child(3) {
 					    bottom: 4px;
+					    transform: translate(0px, 0px) rotate(0deg);
 				    }
 				    				    
 			    }
+			    
+			&.clicked {
+				span {
+				    &:nth-child(1) {
+					    top: 4px;
+					    transform: translate(0px, 12px) rotate(-45deg);
+				    }
+	
+				    &:nth-child(2) {
+					    top: 16px;
+					    left: 50%;
+					    right: 100%;
+					    width: 0;
+				    }
+				    
+				    &:nth-child(3) {
+					    bottom: 4px;
+					    transform: translate(0px, -12px) rotate(45deg);
+				    }
+			    }				
+			}
 			    
 		    }
 		    
@@ -134,4 +284,88 @@ header.header {
 	
 	}
 	
+}
+
+#off-canvas {
+    position: fixed;
+    z-index: 9;
+    top: -1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 76px;
+    height: 100%;
+    background-color: $brand-blue;
+    
+    @include breakpoint(xlarge) {
+	    display: none !important;
+    }
+    
+	.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
+		border: 0;
+		right: 25px;
+		width: 10px;
+		height: 5px;
+		border: 0;
+		background-size: contain;
+	    background-position: center;
+	    background-repeat: no-repeat;						
+		background-image: url(../images/mobile-chev-down.svg);
+	}
+    
+    ul#offcanvas-nav.menu {
+	    border-top: 1px solid $light-gray;
+	    border-bottom: 1px solid $light-gray;
+	    li {
+		    a {
+			    color: $white;
+		    }
+	    }
+	    
+	    >li {
+		    > a {
+			    font-size: rem-calc(20);
+			    line-height: 1.2;
+			    font-family: $header-font-family;
+			    letter-spacing: .05px;
+			    padding: .9rem 2.3rem;		
+			    border-top: 1px solid $light-gray;
+			    border-bottom: 1px solid $light-gray;    
+		    }
+		    
+		&.active {
+			> a {
+				background-color: $brand-blue;
+			}
+			
+			.submenu li.current-menu-item a {
+				background-color: #CAD3EA;
+				color: $brand-blue;
+			}
+			
+		}
+		    
+		    .submenu {
+				border-bottom: 1px solid $light-gray;
+			    
+			    li {
+				    a {
+					    font-weight: 600;
+					    line-height: 1.1875;
+					    padding: .7rem 2.55rem;
+				    }
+			    }
+		    }
+		    
+	    }
+	    
+    }
+    
+    .book-btn-wrap {
+	    padding: 1.2rem 1.2rem 1.3rem;
+	    .button {
+		    width: 100%;
+	    }
+    }
+    
 }

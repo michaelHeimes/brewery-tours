@@ -1,0 +1,48 @@
+.home {
+	
+	.banner {
+		min-height: 687px;
+		
+		h1 {
+			line-height: 1.1388;
+			margin-bottom: .25rem;
+		}
+		
+		p {
+			font-size: rem-calc(25);
+			line-height: 1.52;
+		}
+		
+		.link-wrap {
+			padding-top: .25rem;
+		}
+		
+	}
+	
+	.s1 {
+	    height: 800px;
+	    position: relative;
+	    background: url(../images/mtn-bg.svg);
+	    background-size: auto;
+	    background-position: 50% 0%;
+	    margin-top: -120px;
+		
+		svg {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			
+		&.solid-blue {
+			top: -100px;
+		}
+		
+		&.gradient-blue {
+			
+		}
+			
+		}
+		
+	}
+	
+}

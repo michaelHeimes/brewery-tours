@@ -34,7 +34,7 @@ CSS file.
 @include foundation-accordion;
 @include foundation-accordion-menu;
 // @include foundation-badge;
-// @include foundation-breadcrumbs;
+@include foundation-breadcrumbs;
 // @include foundation-button-group;
 // @include foundation-callout;
 // @include foundation-card;
@@ -42,12 +42,12 @@ CSS file.
 @include foundation-menu;
 // @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
-// @include foundation-dropdown;
-// @include foundation-dropdown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
 @include foundation-responsive-embed;
 // @include foundation-label;
 // @include foundation-media-object;
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 // @include foundation-orbit;
 // @include foundation-pagination;
 // @include foundation-progress-bar;
@@ -64,6 +64,12 @@ CSS file.
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+// Vendor Styles
+@import "slick";
+
 // Import your custom styles
 @import "global";
 @import "header";
+@import "footer";
+@import "home";
+@import "banner";

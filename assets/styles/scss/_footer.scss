@@ -1,0 +1,178 @@
+footer.footer {
+	position: relative;
+	padding-bottom: 5.4rem;
+	
+	a {
+		color: $white;
+	}
+	p {
+		font-size: rem-calc(17);
+		line-height: 2.0588;
+	}
+	
+	.footer-section {
+		margin-bottom: 3rem;
+		
+		@include breakpoint(tablet) {
+			margin-bottom: 0;
+		}
+		
+	}
+	
+	.logo-wrap {
+    	margin-top: -176px;
+	}
+	
+	.contact-wrap {
+		padding-top: 2.75rem;
+		max-width: 620px;
+	}
+	
+	.towns-dropdown {
+		text-align: center;
+		background-color: $white;
+		
+		@include breakpoint(tablet) {
+			margin-top: -49px;
+		}
+		
+		.heading-wrap {
+			background-color: $band-navy;	
+			padding: 1.7rem 2.55rem .85rem;		
+			h2 {
+				font-size: rem-calc(33);
+				line-height: 1.212;
+			}
+		}
+		
+		.copy-wrap {
+			padding: 1.45rem 2.45rem .7rem;
+			p {
+				font-size: rem-calc(17);
+				line-height: 1.7;
+				color: $black;
+			}
+		}
+		
+		.text-wrap {
+			text-align: left;
+		}
+		
+		.bottom {
+			padding: 0 1.1rem 1.35rem;
+		}
+		
+		.button {
+			width: 100%;
+		}
+		
+		.dropdown-btn {
+			font-size: rem-calc(16);
+			line-height: 1.1176;
+			color: $band-navy;
+			background-color: $white;
+			font-weight: 600;
+			font-family: $body-font-family;
+			border: 1px solid $band-navy;
+			padding: 0;
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: space-between;
+		    
+		    span {
+			    display: inline-block;
+				padding: 0 1.2rem;
+		    }
+		    
+		}
+	}
+	
+	#towns-dropdown {
+		a {
+			display: block;
+			width: 100%;
+			text-align: left;
+			font-size: rem-calc(16);
+			line-height: 1.1176;
+			color: $band-navy;
+			background-color: $white;
+			font-weight: 600;
+			font-family: $body-font-family;
+			padding: .8rem 1.35rem .6rem;
+			
+		&:hover {
+			background-color: #CAD3EA;
+		}
+			
+		}
+	}
+	
+	.middle {
+		padding-top: 2.4rem;
+		padding-bottom: 2.85rem;
+	}
+	
+	nav .menu {
+		li {
+			a {
+				font-family: $header-font-family;
+				color: $white;
+				font-size: rem-calc(25);
+				line-height: 1.24;
+				text-transform: uppercase;
+				letter-spacing: .05px;
+				padding: .5rem 1.65rem .5rem 
+			}
+		}
+		
+	&#footer-tours {
+		margin-bottom: 1.9rem;
+		
+		li a {
+			color: $brand-orange;
+		}
+	}
+		
+	}
+	
+	.bottom {
+		.badge {
+			img {
+				max-width: 153px;
+			}
+		}
+		
+		.social {
+			
+			h3 {
+				font-family: $body-font-family;
+				font-size: rem-calc(17);
+				line-height: 2.058;
+				font-weight: 400;
+				margin-bottom: .6rem;
+			}
+			
+			.dashes {
+				border-top: 1px solid transparent;
+				border-image-source: url(../images/border-dash.svg);
+				border-image-slice: 1 0;
+				border-image-repeat: space;
+				margin-left: -.1rem;
+				margin-right: -.61rem;
+				margin-bottom: 1.05rem;
+			}
+			
+			li {
+				a {
+					padding: 0;
+				}	
+			
+			&:not(:last-child) {
+				margin-right: 1.1rem;
+			}
+				
+			}	
+		}
+	}
+	
+}

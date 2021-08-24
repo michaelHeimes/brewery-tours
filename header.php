@@ -29,6 +29,8 @@
 	    <?php } ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		
+		<link rel="stylesheet" href="https://use.typekit.net/irk3xeb.css">
 
 		<?php wp_head(); ?>
 
@@ -36,7 +38,7 @@
 			
 	<body <?php body_class(); ?>>
 				
-		<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
+		<header class="header" role="banner">
 					
 			 <!-- This navs will be applied to the topbar, above all content 
 				  To see additional nav styles, visit the /parts directory -->
@@ -51,3 +53,5 @@
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 			
 			<div class="off-canvas-content" data-off-canvas-content>
+				
+				<?php get_template_part('parts/content', 'banner');?>
