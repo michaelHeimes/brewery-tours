@@ -1,0 +1,43 @@
+.page-template-template-tour-landing,
+.page-template-template-tour-type {
+	
+	.breadcrumbs {
+		a,
+		span.current {
+			font-family: $header-font-family;
+			font-size: rem-calc(16);
+			line-height: 1.1875;
+			letter-spacing: .05px;
+			color: $black;
+		}
+	}
+	
+	.page-nav {
+		
+		.menu {
+			
+			li {
+				flex: 1 1 auto;
+			&.plan-visit {
+				display: none;
+			}
+			
+				a {
+					background-color: $brand-blue;
+					color: $white;
+					.title-icon-wrap {
+						.icon {
+							
+						&.blue {
+							display: none;
+						}
+							
+						}
+					}
+				}
+			
+			}
+		}
+	
+	}
+}

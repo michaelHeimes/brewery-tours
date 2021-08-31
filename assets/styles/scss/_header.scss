@@ -2,7 +2,7 @@ header.header {
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
-	transition: transform .5s ease;
+	transition: transform .5s ease, background-color .3s ease;
 	
 	.top-bar-wrap {
 		padding: 1rem 1.4rem 1rem 1.75rem;
@@ -284,6 +284,12 @@ header.header {
 	
 	}
 	
+}
+
+.has-scrolled {
+	header.header {
+		background-color: $brand-blue;
+	}
 }
 
 #off-canvas {

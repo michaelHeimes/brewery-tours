@@ -156,7 +156,9 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 
 	function my_wp_nav_menu_objects( $items, $args ) {
 		
-		if ( $args->theme_location == 'main-nav' ) {
+		// var_dump($args);
+		
+		if ( $args->theme_location == 'main-nav') {
 			
 			// loop
 			foreach( $items as &$item ) {
@@ -186,8 +188,32 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 			
 			// return
 			return $items;
+			
+		} elseif ( $args->theme_location != 'main-nav' && 'main-navigation' !== $args->menu->slug && $args->theme_location != 'social-links' && $args->theme_location != 'review-links') {
+			
+			// loop
+			foreach( $items as &$item ) {
 				
-		} elseif ( $args->theme_location == 'social-links' || $args->theme_location == 'review-links' ) {
+				// vars
+				$icon = get_field('icon', $item);
+				$blue_icon = get_field('icon_blue', $item);
+				$size = 'full';
+				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
+						
+				// append icon
+				if( $icon ) {
+					
+					$item->title = '<span class="title-icon-wrap"><span class="icon orange" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="icon blue" aria-hidden="true">' . wp_get_attachment_image( $blue_icon, $size ) . '</span>' . $item->title . '</span>';
+					
+				}
+				
+			}
+			
+			
+			// return
+			return $items;
+				
+		} elseif ( $args->theme_location == 'social-links' || 'main-navigation' != $args->menu->slug && $args->theme_location == 'review-links' ) {
 
 			// loop
 			foreach( $items as &$item ) {
@@ -220,16 +246,58 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
 
-/*
-add_filter('nav_menu_item_args', function ($args, $item, $depth) {
-    if ($args->theme_location == 'main-nav') {
-        $title             = apply_filters('the_title', $item->title, $item->ID);
-        $args->link_before = '<span data-hover="' . $title . '">';
-        $args->link_after  = '</span>';
+
+// add hook that shows submenu of parent link
+add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
+
+// filter_hook function to react on sub_menu flag
+function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
+  if ( isset( $args->sub_menu ) ) {
+    $root_id = 0;
+    
+    // find the current menu item
+    foreach ( $sorted_menu_items as $menu_item ) {
+      if ( $menu_item->current ) {
+        // set the root id based on whether the current menu item has a parent or not
+        $root_id = ( $menu_item->menu_item_parent ) ? $menu_item->menu_item_parent : $menu_item->ID;
+        break;
+      }
     }
-    return $args;
-}, 10, 3);
-*/
+    
+    // find the top level parent
+    if ( ! isset( $args->direct_parent ) ) {
+      $prev_root_id = $root_id;
+      while ( $prev_root_id != 0 ) {
+        foreach ( $sorted_menu_items as $menu_item ) {
+          if ( $menu_item->ID == $prev_root_id ) {
+            $prev_root_id = $menu_item->menu_item_parent;
+            // don't set the root_id to 0 if we've reached the top of the menu
+            if ( $prev_root_id != 0 ) $root_id = $menu_item->menu_item_parent;
+            break;
+          } 
+        }
+      }
+    }
+
+    $menu_item_parents = array();
+    foreach ( $sorted_menu_items as $key => $item ) {
+      // init menu_item_parents
+      if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
+
+      if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
+        // part of sub-tree: keep!
+        $menu_item_parents[] = $item->ID;
+      } else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
+        // not part of sub-tree: away with it!
+        unset( $sorted_menu_items[$key] );
+      }
+    }
+    
+    return $sorted_menu_items;
+  } else {
+    return $sorted_menu_items;
+  }
+}
 
 
 

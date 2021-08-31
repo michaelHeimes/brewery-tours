@@ -52,7 +52,7 @@ CSS file.
 // @include foundation-pagination;
 // @include foundation-progress-bar;
 // @include foundation-slider;
-@include foundation-sticky;
+// @include foundation-sticky;
 // @include foundation-reveal;
 // @include foundation-switch;
 // @include foundation-table;
@@ -73,3 +73,5 @@ CSS file.
 @import "footer";
 @import "home";
 @import "banner";
+@import "tour-landing";
+@import "tour-pages";

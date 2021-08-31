@@ -94,7 +94,7 @@
 						</div>
 						
 						<div class="middle grid-x grid-padding-x">
-							<div class="small-12">
+							<div class="cell small-12">
 								<nav role="navigation">
 									<?php joints_footer_tours_links();?>
 		    						<?php joints_footer_links(); ?>

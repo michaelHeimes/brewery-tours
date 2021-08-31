@@ -1,8 +1,8 @@
-<div class="banner has-bg align-middle">
+<div class="banner has-bg">
 	
 	<div class="bg" style="background-image: url(<?php the_field('banner_background_image');?>)"></div>
 	<div class="grid-container">
-		<div class="grid-x grid-padding-x align-middle">
+		<div class="grid-x grid-padding-x">
 		
 		<?php if (is_front_page()):?>
 			<div class="cell small-12 medium-6">
@@ -23,7 +23,23 @@
 				
 			</div>
 		<?php else:?>
-			<h1><?php the_title();?></h1>
+		
+			<div class="cell small-12 text-center">
+			
+				<?php
+	
+				global $post;
+				
+				if ( is_page() && $post->post_parent ):
+				
+				$parent_title = get_the_title($post->post_parent);?>
+					<h1><?php echo $parent_title;?></h1>
+				<?php else:?>
+					<h1><?php the_title();?></h1>
+				<?php endif;?>
+		
+			</div>
+			
 		<?php endif;?>
 		
 		</div>

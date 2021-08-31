@@ -42,6 +42,23 @@ jQuery( document ).ready(function($) {
 			
 		}
 	}
+	
+	_app.has_scrolled = function() {
+
+		// Fixed nav trigger
+		$(window).on("load scroll resize", function(e) {
+			var header_height = 1;
+			var delay_height = 0;
+
+			if ($(this).scrollTop() > (header_height + delay_height)) {
+				$('body').addClass('has-scrolled');
+			} else {
+				$('body').removeClass('has-scrolled');
+			}
+
+		});
+
+	};
 			
 	_app.init = function() {
 		
@@ -49,6 +66,7 @@ jQuery( document ).ready(function($) {
 		_app.emptyParentLinks();
 		_app.mobile_nav();
 		_app.towns_dropdown();
+		_app.has_scrolled();
 	}
 
 
