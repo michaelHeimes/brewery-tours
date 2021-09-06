@@ -38,7 +38,7 @@
 			
 	<body <?php body_class(); ?>>
 				
-		<header class="header" role="banner">
+		<header class="header grid-container fluid" role="banner">
 					
 			 <!-- This navs will be applied to the topbar, above all content 
 				  To see additional nav styles, visit the /parts directory -->

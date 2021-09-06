@@ -19,14 +19,38 @@
 		
 	}
 	
-	.s1 {
+	.slider {
+		padding-top: 200px;
+		overflow: hidden;
 	    height: 800px;
 	    position: relative;
 	    background: url(../images/mtn-bg.svg);
-	    background-size: auto;
+	    background-size: cover;
 	    background-position: 50% 0%;
 	    margin-top: -120px;
+	    
+	    .overflow-slider {
+	    
+		    button {
+			    cursor: pointer;
+			   
+			&.slick-prev {
+			}
+			    
+		    }
+		    
+		    .slick-list {
+			    overflow: visible;
+			    
+			    .slick-slide {
+				    margin: 0 9px;
+			    }
+			    
+		    }
+	    
+	    }
 		
+/*
 		svg {
 			position: absolute;
 			left: 0;
@@ -42,7 +66,89 @@
 		}
 			
 		}
+*/
 		
+	}
+	
+	.s1 {
+		padding-bottom: 10.75rem;
+		
+		.callout-card {
+			position: relative;
+			background-color: $white;
+			margin-top: -49px;
+			padding-right: .7rem;
+			padding: 2.5rem 3.25rem;
+			h3 {
+				margin-bottom: 0;
+			}
+			h2 {
+				margin: 0;
+			}
+		}
+		
+		h2 {
+			font-size: rem-calc(50);
+			line-height: 1.32;
+			color: $brand-blue;
+			margin-bottom: .45em;
+		}
+		
+		.link-wrap {
+			padding-top: 1.1rem;
+		}
+		
+	}
+	
+	.s2 {
+		
+		.heading-wrap {
+			position: relative;
+			margin-bottom: -3.25rem;
+			
+			h2 {
+				font-size: rem-calc(72);
+				line-height: 1.1388;
+			}
+			
+		}
+		
+		.col-right {
+			margin-top: -5.2rem;
+		}
+		
+		.single-card {
+			margin-bottom: 5.2rem;
+			
+			@include breakpoint(medium) {
+				max-width: 613px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+		}
+		
+		.text-card {
+			margin-top: -72px;
+			
+			.links-wrap {
+				a {
+					
+				&:hover {
+					color: $brand-orange;
+					
+					svg {
+						path {
+							stroke: $brand-orange;
+						}
+					}
+					
+				}
+					
+				}
+			}
+			
+		}
 	}
 	
 }

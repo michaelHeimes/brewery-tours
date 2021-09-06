@@ -1,4 +1,4 @@
-<div class="banner has-bg">
+<div class="banner has-bg grid-container fluid">
 	
 	<div class="bg" style="background-image: url(<?php the_field('banner_background_image');?>)"></div>
 	<div class="grid-container">

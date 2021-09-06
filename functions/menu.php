@@ -203,7 +203,7 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 				// append icon
 				if( $icon ) {
 					
-					$item->title = '<span class="title-icon-wrap"><span class="icon orange" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="icon blue" aria-hidden="true">' . wp_get_attachment_image( $blue_icon, $size ) . '</span>' . $item->title . '</span>';
+					$item->title = '<span class="title-icon-wrap"><span class="icon orange" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="icon blue" aria-hidden="true">' . wp_get_attachment_image( $blue_icon, $size ) . '</span>' . $item->title . '</span><svg width="7" height="12" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg"><title>Path_8747</title><path d="M.707.707l4.865 4.865-4.865 4.865" stroke="#FFF" stroke-width="2" fill="none"/></svg>';
 					
 				}
 				

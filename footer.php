@@ -7,8 +7,14 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
-					
-				<footer class="footer blue-bg" role="contentinfo">
+ 
+ 				<div class="grid-container fluid has-bg">
+	 				<div class="footer-particles"></div>
+ 				</div>
+ 
+				<div class="grid-container fluid pre-footer"></div>
+				
+				<footer class="footer blue-bg grid-container fluid" role="contentinfo">
 					<div class="grid-container">
 						<div class="top grid-x grid-padding-x">
 							<div class="left cell small-12 tablet-8">
@@ -39,14 +45,14 @@
 									<?php if( have_rows('footer_booking_dropdown', 'option') ):?>
 										<?php while ( have_rows('footer_booking_dropdown', 'option') ) : the_row();?>	
 											<div class="text-wrap heading-wrap">
-												<h2><?php the_sub_field('heading');?></h2>
+												<h2 class="alt-heading-font"><?php the_sub_field('heading');?></h2>
 											</div>
 											<div class="text-wrap copy-wrap">
 												<p><?php the_sub_field('text');?></p>
 											</div>
 										<?php if( have_rows('town_links', 'option') ):?>
 											<div class="bottom">
-												<button class="button dropdown-btn" type="button" data-toggle="towns-dropdown">
+												<button class="button dropdown-btn no-radius" type="button" data-toggle="towns-dropdown">
 													<span>Select a town</span>
 													<svg xmlns="http://www.w3.org/2000/svg" width="56" height="57.438" viewBox="0 0 56 57.438">
 													  <g id="Group_750" data-name="Group 750" transform="translate(-0.431 -0.065)">
@@ -85,7 +91,7 @@
 									    $link_target = $link['target'] ? $link['target'] : '_self';
 									    ?>
 									<div class="bottom">
-									    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									    <a class="button no-radius" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 									</div>
 									<?php endif; ?>
 									

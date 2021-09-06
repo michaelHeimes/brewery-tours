@@ -1,3 +1,28 @@
+.footer-particles {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -800px;
+	bottom: -800px;
+	background-image: url(../images/texture.png);
+	background-repeat: repeat;
+	background-size: contain;
+}
+
+.pre-footer {
+	width: 100%;
+	height: 663px;
+	background-image: url(../images/footer-mountains@2x.png);
+	background-position: 41% 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 6.2rem !important;
+	
+	@include breakpoint(medium) {
+		background-position: 50% 0%;
+	}
+	
+}
 footer.footer {
 	position: relative;
 	padding-bottom: 5.4rem;
@@ -115,7 +140,7 @@ footer.footer {
 	nav .menu {
 		li {
 			a {
-				font-family: $header-font-family;
+				font-family: $header-font-family-alt;
 				color: $white;
 				font-size: rem-calc(25);
 				line-height: 1.24;

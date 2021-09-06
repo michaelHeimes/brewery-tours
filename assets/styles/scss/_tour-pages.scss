@@ -1,10 +1,10 @@
 .page-template-template-tour-landing,
-.page-template-template-tour-type {
+.page-template-page-templates {
 	
 	.breadcrumbs {
 		a,
 		span.current {
-			font-family: $header-font-family;
+			font-family: $header-font-family-alt;
 			font-size: rem-calc(16);
 			line-height: 1.1875;
 			letter-spacing: .05px;
@@ -15,19 +15,31 @@
 	.page-nav {
 		
 		.menu {
-			
+			margin-left: -.46875rem;
+			margin-right: -.46875rem;
+			min-height: 79px;			
 			li {
+				padding-left: .46875rem;
+				padding-right: .46875rem;
 				flex: 1 1 auto;
+				margin-bottom: .9375rem;
 			&.plan-visit {
 				display: none;
 			}
 			
 				a {
+					font-family: $header-font-family;
+					position: relative;
+					height: 100%;
+					padding: 2.25rem 1.6rem 2.25rem 2.25rem;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
 					background-color: $brand-blue;
 					color: $white;
 					.title-icon-wrap {
 						.icon {
-							
+							margin-right: .8rem;
 						&.blue {
 							display: none;
 						}
@@ -35,6 +47,22 @@
 						}
 					}
 				}
+			
+			&.active {
+				a {
+					background-color: $brand-orange;
+					.title-icon-wrap {
+						.icon {
+							&.orange {
+								display: none;
+							}
+							&.blue {
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
 			
 			}
 		}

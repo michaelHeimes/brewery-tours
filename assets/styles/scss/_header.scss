@@ -1,5 +1,9 @@
 header.header {
 	position: fixed;
+	left: 0;
+	right: 0;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 	width: 100%;
 	z-index: 9999;
 	transition: transform .5s ease, background-color .3s ease;
@@ -114,7 +118,7 @@ header.header {
 						    align-items: center;							
 							> a {
 								border-right: 1px solid $light-gray;
-								font-family: $header-font-family;
+								font-family: $header-font-family-alt;
 								color: $white;
 								font-size: rem-calc(20);
 								text-transform: uppercase;
@@ -172,7 +176,7 @@ header.header {
 									a {
 										min-height: 174px;
 										position: relative;
-										font-family: $header-font-family;
+										font-family: $header-font-family-alt;
 										color: $white;
 										font-size: rem-calc(27);
 										text-transform: uppercase;
@@ -212,6 +216,8 @@ header.header {
 				    display: flex;
 				    justify-content: center;
 				    align-items: center;
+				    border-radius: 0;
+				    font-size: 1.25rem;
 				}
 				
 			}
@@ -332,7 +338,7 @@ header.header {
 		    > a {
 			    font-size: rem-calc(20);
 			    line-height: 1.2;
-			    font-family: $header-font-family;
+			    font-family: $header-font-family-alt;
 			    letter-spacing: .05px;
 			    padding: .9rem 2.3rem;		
 			    border-top: 1px solid $light-gray;

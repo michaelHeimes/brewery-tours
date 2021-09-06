@@ -67,6 +67,8 @@
 $brand-blue: #375388;
 $band-navy: #2A3B59;
 $brand-orange: #F49909;
+$bg-gray: #F2F2F2;
+$header-font-family-alt: bebas-neue, sans-serif;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1306px);
@@ -79,7 +81,7 @@ $foundation-palette: (
   alert: #cc4b37,
 );
 $light-gray: #EBEAEA;
-$medium-gray: #cacaca;
+$medium-gray: #707070;
 $dark-gray: #8a8a8a;
 $black: #000000;
 $white: #ffffff;
@@ -92,7 +94,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 35px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -135,7 +137,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: bebas-neue, sans-serif;
+$header-font-family: cubano, sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -171,7 +173,7 @@ $header-styles: (
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.947;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
@@ -276,7 +278,7 @@ $badge-font-size: 0.6rem;
 // 10. Breadcrumbs
 // ---------------
 
-$breadcrumbs-margin: 0 0 $global-margin 0;
+$breadcrumbs-margin: 3.6rem 0 1.35rem;
 $breadcrumbs-item-font-size: rem-calc(11);
 $breadcrumbs-item-color: $primary-color;
 $breadcrumbs-item-color-current: $black;
@@ -291,8 +293,8 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // 11. Button
 // ----------
 
-$button-font-family: $header-font-family;
-$button-padding: 0.85em 1em;
+$button-font-family: $header-font-family-alt;
+$button-padding: .82em 1.8514em;
 $button-margin: 0 0 0 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -304,7 +306,7 @@ $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 1.25rem,
+  default: 1.5625rem,
   large: 1.25rem,
 );
 $button-palette: $foundation-palette;
@@ -422,7 +424,7 @@ $flexbox-responsive-breakpoints: true;
 // 20. Forms
 // ---------
 
-$fieldset-border: 1px solid $medium-gray;
+$fieldset-border: 0px solid $medium-gray;
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
@@ -432,7 +434,7 @@ $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
-$input-prefix-border: 1px solid $medium-gray;
+$input-prefix-border: 0px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
 $form-label-font-size: rem-calc(14);
@@ -450,10 +452,10 @@ $input-line-height: $global-lineheight;
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $medium-gray;
-$input-border-focus: 1px solid $dark-gray;
+$input-border: 0px solid $medium-gray;
+$input-border-focus: 1px solid $brand-orange;
 $input-padding: $form-spacing / 2;
-$input-shadow: inset 0 1px 2px rgba($black, 0.1);
+$input-shadow: inset 0 0 0 rgba($black, 0);
 $input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;

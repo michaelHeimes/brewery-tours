@@ -1,3 +1,122 @@
 .page-template-template-tour-landing {
+
+	.s1 {
+		.grid-container {
+			position: relative;
+		}
+		
+		.blue-bg {
+			padding-top: 5rem;
+		}
+		
+		.left {
+			margin-bottom: 2rem;
+			
+			.inner {
+				max-width: 437px;
+			}
+		}
+		
+		.right {
+			.inner {
+				position: relative;
+				
+				svg {
+					position: absolute;
+					bottom: 0;
+					left: 20%;
+					
+					circle#Ellipse_3-2 {
+						transition: all .3s ease;
+					}
+					
+					a:hover {
+						
+						circle#Ellipse_3-2 {
+							fill: $brand-orange;
+						}
+						
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+	
+	.s2 {
+		
+		.left {
+			@include breakpoint(medium) {
+				padding-right: 0;
+			}
+			
+			.inner {
+				padding-top: 5.25rem;
+				padding-bottom: 6rem;
+				background: #E5E5E5 url(../images/left-map.svg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;			
+			}
+			
+			
+			
+		}
+		
+		.right {
+			@include breakpoint(medium) {
+				padding-left: 0;
+			}
+						
+			.inner {
+				position: relative;
+				height: 100%;
+								
+				.text-wrap {
+					color: $white;
+					position: relative;
+					width: 100%;
+					max-width: 431px;
+					margin: auto;
+				}
+				
+				h2 {
+			
+					font-size: rem-calc(72);
+					line-height: 1.0138;
+					margin-bottom: .1em;
+				}
+				
+				h3 {
+					font-size: rem-calc(23);
+					line-height: 1.5217;
+				}
+				
+				.link-wrap {
+					padding-top: 0.62rem;
+				}
+				
+			}
+			
+		}
+	}
+	
+	.s3 {
+		
+		.text-card {
+			@include breakpoint(tablet) {
+				margin-top: 17.7875rem;
+			}
+			.card-shadow {
+				@include breakpoint(tablet) {
+					min-width: 452px;
+					transform: translateX(-54%);
+				}
+			}
+		}
+		
+	}
 	
 }
