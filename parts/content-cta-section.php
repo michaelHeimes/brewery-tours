@@ -1,17 +1,18 @@
 <section class="cta-section">
 	<div class="grid-container">
+		
 		<div class="grid-x grid-padding-x cubes-wrap">
 			
-			<?php if( have_rows('cta_left_square') ):?>
-				<?php while ( have_rows('cta_left_square') ) : the_row();?>	
+			<?php if( have_rows('cta_left_square', 'option') ):?>
+				<?php while ( have_rows('cta_left_square', 'option') ) : the_row();?>	
 				<div class="cta-element cell small-12 medium-6">
 					<div class="inner cube text-center has-bg grid-x align-middle align-center">
 						<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
 						<div class="text-wrap">
-							<h2 class="alt-heading-font"><?php the_sub_field('heading');?></h2>
+							<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 							
 							<?php if( $sub_heading = get_sub_field('sub-heading') ):?>
-								<h3><?php echo $sub_heading;?></h3>
+								<h3 class="white"><?php echo $sub_heading;?></h3>
 							<?php endif;?>
 							
 							<?php 
@@ -31,17 +32,17 @@
 				<?php endwhile;?>
 			<?php endif;?>
 
-			<?php if( have_rows('cta_right_square') ):?>
-				<?php while ( have_rows('cta_right_square') ) : the_row();?>	
+			<?php if( have_rows('cta_right_square', 'option') ):?>
+				<?php while ( have_rows('cta_right_square', 'option') ) : the_row();?>	
 				<div class="cta-element has-form cell small-12 medium-6">
 					<div class="inner cube text-center has-bg grid-x align-middle align-center">
 						<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
 
 						<div class="text-wrap">
-							<h2 class="alt-heading-font"><?php the_sub_field('heading');?></h2>
+							<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 							
 							<?php if( $sub_heading = get_sub_field('sub-heading') ):?>
-								<h3><?php echo $sub_heading;?></h3>
+								<h3 class="white"><?php echo $sub_heading;?></h3>
 							<?php endif;?>
 							
 							<?php gravity_form( 2, false, false, false, '', true );?>
@@ -54,7 +55,6 @@
 
 		</div>
 		
-			
 		<?php if( have_rows('cta_bottom_rectangle') ):?>
 		<div class="grid-x grid-padding-x">
 			<?php while ( have_rows('cta_bottom_rectangle') ) : the_row();?>	
@@ -62,10 +62,10 @@
 				<div class="inner cta-bottom text-center has-bg grid-x align-middle align-center">
 					<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
 					<div class="text-wrap">
-						<h2 class="alt-heading-font"><?php the_sub_field('heading');?></h2>
+						<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 						
 						<?php if( $sub_heading = get_sub_field('sub-heading') ):?>
-							<h3><?php echo $sub_heading;?></h3>
+							<h3 class="white"><?php echo $sub_heading;?></h3>
 						<?php endif;?>
 						
 						<?php 

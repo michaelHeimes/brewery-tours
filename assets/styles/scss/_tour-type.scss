@@ -1,0 +1,205 @@
+.page-template-template-tour-type,
+.page-template-template-plan {
+	
+	.text-icons {
+		.blue-bg {
+			padding-top: 6.5rem;
+			padding-bottom: 2.75rem;
+		}
+		
+		.centered-dashes {
+			.copy-wrap {
+				padding-top: 1.1rem;
+			}
+		}
+
+		.bottom {
+			.cell {
+				margin-bottom: 3rem;
+				.icon-wrap {
+					margin-bottom: .85rem;
+				}
+				.copy-wrap {
+					max-width: 280px;
+					margin: auto;
+					padding-top: 1.1rem;
+				}
+			}
+		}
+		
+	}
+	
+	.featured-breweries {
+		
+		.border {
+			border: 1px solid $brand-navy;
+			padding: 1.9375rem 1rem;
+		}
+		
+		.left {
+			padding-bottom: 2rem;
+			
+			@include breakpoint(tablet) {
+				padding-bottom: .6rem;
+			}
+			
+			.inner {
+				max-width: 360px;
+				margin: auto;
+				
+				h2 {
+					font-size: rem-calc(48);
+					line-height: 1.1875
+				}
+				
+				a {
+					font-family: $header-font-family;
+					position: relative;
+					display: inline-block;
+					padding: .12rem 0;
+					margin-bottom: 1.5rem;
+					
+					&:after {
+						content: '';
+						width: 100%;
+						height: 1px;
+						background-color: $brand-blue;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+					}
+					
+				}
+				
+				ul.slick-dots {
+					margin: 0;
+					padding: .25rem 0 0;
+					display: flex;
+					flex-wrap: wrap;
+					font-size: 0;
+					justify-content: center;
+					align-items: center;
+					
+					li {
+						cursor: pointer;
+						flex: 0 0 10px;
+						width: 10px;
+						width: 10px;
+						height: 10px;
+						border-radius: 100%;
+						background-color: $brand-navy;
+						opacity: .23;
+						margin: 12px;
+
+					&.slick-active {
+						opacity: 1;
+					}
+						
+					}
+					
+				}
+					
+			}
+		}
+		
+	}
+	
+	.book-cta {
+		margin-top: 3rem;
+		
+		.white-bg {
+			padding-bottom: 2.55rem;
+		}
+		
+		.price {
+			display: inline-block;
+			border: 9px solid $brand-blue;
+			border-radius: 100%;
+			position: relative;
+			top: -3.71875rem;
+			margin-bottom: -2.3rem;
+							
+			.inner {
+				background-color: $brand-blue;
+				border: 5px solid $white;
+				border-radius: 100%;
+				color: $white;
+				font-size: rem-calc(44);
+				line-height: 1.20;
+				padding: 0 1.375rem;
+			}
+		}
+		
+		h5 {
+			margin-bottom: 2.85rem;
+		}
+		
+		.detail-rows {
+			.cell div {
+				height: 100%;
+				border-top: 1px solid $light-gray;
+				border-bottom: 1px solid $light-gray;
+				padding: .75rem 0 1.3rem;
+				margin-top: -1px;
+			}
+		}
+		
+		.btn-wrap {
+			padding-top: 3rem;
+		}
+		
+	}
+	
+	.plan {
+		.btn-wrap {
+			padding-top: .6rem;
+			padding-bottom: 1rem;
+		}
+	}
+	
+	.faqs {
+		
+		.border {
+			margin-top: 2.5rem;
+			padding: 2.1875rem;
+		}
+	}
+	
+}
+
+.page-template-template-plan {
+	.plan-element {
+		
+		.icon-wrap {
+		    padding-bottom: .85rem;
+		}
+		
+		.text-wrap {
+		    padding-bottom: 3.2rem;
+		}
+		
+		.single {
+			margin-bottom: 3.75rem;
+		}
+		
+		.img-wrap {
+			padding-bottom: 1rem;
+			
+			@include breakpoint(tablet) {
+				padding-bottom: 0;
+			}
+			
+		}
+		
+		h3 {
+			line-height: 1.258;	
+		}
+		a {
+			font-weight: 500;
+		}
+		.link-wrap {
+			padding-top: .5rem;
+		}
+	}
+}

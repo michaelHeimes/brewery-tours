@@ -12,11 +12,12 @@
 .pre-footer {
 	width: 100%;
 	height: 663px;
+	background-color: $bg-gray;
 	background-image: url(../images/footer-mountains@2x.png);
 	background-position: 41% 0%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin-top: 6.2rem !important;
+// 	margin-top: 6.2rem !important;
 	
 	@include breakpoint(medium) {
 		background-position: 50% 0%;
@@ -62,9 +63,10 @@ footer.footer {
 		}
 		
 		.heading-wrap {
-			background-color: $band-navy;	
+			background-color: $brand-navy;	
 			padding: 1.7rem 2.55rem .85rem;		
 			h2 {
+				color: $white;
 				font-size: rem-calc(33);
 				line-height: 1.212;
 			}
@@ -94,11 +96,11 @@ footer.footer {
 		.dropdown-btn {
 			font-size: rem-calc(16);
 			line-height: 1.1176;
-			color: $band-navy;
+			color: $brand-navy;
 			background-color: $white;
 			font-weight: 600;
 			font-family: $body-font-family;
-			border: 1px solid $band-navy;
+			border: 1px solid $brand-navy;
 			padding: 0;
 		    display: inline-flex;
 		    align-items: center;
@@ -119,7 +121,7 @@ footer.footer {
 			text-align: left;
 			font-size: rem-calc(16);
 			line-height: 1.1176;
-			color: $band-navy;
+			color: $brand-navy;
 			background-color: $white;
 			font-weight: 600;
 			font-family: $body-font-family;

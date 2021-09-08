@@ -27,47 +27,7 @@
 	    background: url(../images/mtn-bg.svg);
 	    background-size: cover;
 	    background-position: 50% 0%;
-	    margin-top: -120px;
-	    
-	    .overflow-slider {
-	    
-		    button {
-			    cursor: pointer;
-			   
-			&.slick-prev {
-			}
-			    
-		    }
-		    
-		    .slick-list {
-			    overflow: visible;
-			    
-			    .slick-slide {
-				    margin: 0 9px;
-			    }
-			    
-		    }
-	    
-	    }
-		
-/*
-		svg {
-			position: absolute;
-			left: 0;
-			right: 0;
-			width: 100%;
-			
-		&.solid-blue {
-			top: -100px;
-		}
-		
-		&.gradient-blue {
-			
-		}
-			
-		}
-*/
-		
+	    margin-top: -120px;		
 	}
 	
 	.s1 {
@@ -149,6 +109,10 @@
 			}
 			
 		}
+	}
+	
+	.pre-footer {
+		background-color: $white;
 	}
 	
 }

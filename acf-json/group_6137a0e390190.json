@@ -1,9 +1,9 @@
 {
-    "key": "group_6135574a32137",
-    "title": "Walking Tour Pages",
+    "key": "group_6137a0e390190",
+    "title": "Tour Type Pages",
     "fields": [
         {
-            "key": "field_61355759bf6d6",
+            "key": "field_6137a0e39a004",
             "label": "Banner",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_6135576bbf6d7",
+            "key": "field_6137a0e39a014",
             "label": "Image",
             "name": "banner_image",
             "type": "image",
@@ -43,7 +43,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_6135581fbf6d8",
+            "key": "field_6137a0e39a020",
             "label": "Section 1",
             "name": "",
             "type": "tab",
@@ -59,7 +59,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355828bf6d9",
+            "key": "field_6137a0e39a028",
             "label": "Heading",
             "name": "s1_heading",
             "type": "text",
@@ -78,7 +78,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355838bf6da",
+            "key": "field_6137a0e39a030",
             "label": "Copy",
             "name": "s1_copy",
             "type": "wysiwyg",
@@ -97,7 +97,7 @@
             "delay": 0
         },
         {
-            "key": "field_61355845bf6db",
+            "key": "field_6137a0e39a037",
             "label": "Icon Cards",
             "name": "icon_cards",
             "type": "repeater",
@@ -116,7 +116,7 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_61355851bf6dc",
+                    "key": "field_6137a0e3a4eaf",
                     "label": "Single Card",
                     "name": "single_card",
                     "type": "group",
@@ -131,7 +131,7 @@
                     "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_61355859bf6dd",
+                            "key": "field_6137a0e3a69cf",
                             "label": "Icon",
                             "name": "icon",
                             "type": "image",
@@ -155,7 +155,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_61355862bf6de",
+                            "key": "field_6137a0e3a69d9",
                             "label": "Text",
                             "name": "text",
                             "type": "text",
@@ -178,7 +178,7 @@
             ]
         },
         {
-            "key": "field_61355876bf6df",
+            "key": "field_6137a0e39a03e",
             "label": "Featured Breweries",
             "name": "",
             "type": "tab",
@@ -194,7 +194,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355a1bbf6e2",
+            "key": "field_6137a0e39a046",
             "label": "Heading",
             "name": "fb_heading",
             "type": "text",
@@ -213,7 +213,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355a24bf6e3",
+            "key": "field_6137a0e39a04e",
             "label": "Image",
             "name": "fb_image",
             "type": "image",
@@ -237,7 +237,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_613558b7bf6e0",
+            "key": "field_6137a0e39a055",
             "label": "Breweries",
             "name": "fb_breweries",
             "type": "repeater",
@@ -256,7 +256,7 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_61355a08bf6e1",
+                    "key": "field_6137a0e3b2e67",
                     "label": "Brewery Link",
                     "name": "fb_brewery_link",
                     "type": "link",
@@ -273,7 +273,7 @@
             ]
         },
         {
-            "key": "field_61355cf263b2f",
+            "key": "field_6137a0e39a05d",
             "label": "Tour Details",
             "name": "",
             "type": "tab",
@@ -289,7 +289,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355d0263b30",
+            "key": "field_6137a0e39a063",
             "label": "Price",
             "name": "td_price",
             "type": "text",
@@ -308,7 +308,26 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355d2a63b31",
+            "key": "field_6137a0e39a06b",
+            "label": "Price For",
+            "name": "td_price_for",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6137a0e39a071",
             "label": "Detail Rows",
             "name": "td_detail_rows",
             "type": "repeater",
@@ -327,7 +346,7 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_61355d3663b32",
+                    "key": "field_6137a0e3bd6a1",
                     "label": "Single Detail",
                     "name": "single_detail",
                     "type": "text",
@@ -348,9 +367,9 @@
             ]
         },
         {
-            "key": "field_61355d4263b33",
+            "key": "field_6137a0e39a078",
             "label": "Link Button",
-            "name": "link_button",
+            "name": "td_link_button",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -363,7 +382,7 @@
             "return_format": "array"
         },
         {
-            "key": "field_61355dbf63b34",
+            "key": "field_6137a0e39a080",
             "label": "Deals",
             "name": "",
             "type": "tab",
@@ -379,7 +398,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355dd163b35",
+            "key": "field_6137a0e39a086",
             "label": "Heading",
             "name": "deals_heading",
             "type": "text",
@@ -398,7 +417,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355de263b36",
+            "key": "field_6137a0e39a08e",
             "label": "Text",
             "name": "deals_text",
             "type": "text",
@@ -417,7 +436,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355dea63b37",
+            "key": "field_6137a0e39a094",
             "label": "Button Link",
             "name": "deals_button_link",
             "type": "link",
@@ -432,7 +451,7 @@
             "return_format": "array"
         },
         {
-            "key": "field_61355dfb63b38",
+            "key": "field_6137a0e39a09b",
             "label": "Slider",
             "name": "",
             "type": "tab",
@@ -448,7 +467,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355e0763b39",
+            "key": "field_6137a0e39a0a1",
             "label": "Slides",
             "name": "slides",
             "type": "gallery",
@@ -475,7 +494,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_61355e9863b3b",
+            "key": "field_6137a0e39a0a7",
             "label": "FAQ",
             "name": "",
             "type": "tab",
@@ -491,7 +510,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_61355ea563b3c",
+            "key": "field_6137a0e39a0ad",
             "label": "Heading",
             "name": "faq_heading",
             "type": "text",
@@ -510,7 +529,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_61355eb263b3d",
+            "key": "field_6137a0e39a0b5",
             "label": "FAQs",
             "name": "faqs",
             "type": "repeater",
@@ -529,7 +548,7 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_61355ec063b3e",
+                    "key": "field_6137a0e3d35a8",
                     "label": "Single FAQ",
                     "name": "single_faq",
                     "type": "group",
@@ -544,7 +563,7 @@
                     "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_61355ecb63b3f",
+                            "key": "field_6137a0e3d59d6",
                             "label": "Question",
                             "name": "question",
                             "type": "text",
@@ -563,7 +582,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_61355ed363b40",
+                            "key": "field_6137a0e3d59df",
                             "label": "Answer",
                             "name": "answer",
                             "type": "wysiwyg",
@@ -591,7 +610,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/template-walking.php"
+                "value": "page-templates\/template-tour-type.php"
             }
         ]
     ],
@@ -603,5 +622,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1630888075
+    "modified": 1631035635
 }

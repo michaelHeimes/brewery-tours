@@ -6,7 +6,7 @@
 		
 		<?php if (is_front_page()):?>
 			<div class="cell small-12 medium-6">
-				<h1><?php the_field('banner_heading');?></h1>
+				<h1 class="white"><?php the_field('banner_heading');?></h1>
 				<p><?php the_field('banner_text');?></p>
 				
 				<?php 
@@ -33,9 +33,9 @@
 				if ( is_page() && $post->post_parent ):
 				
 				$parent_title = get_the_title($post->post_parent);?>
-					<h1><?php echo $parent_title;?></h1>
+					<h1 class="white"><?php echo $parent_title;?></h1>
 				<?php else:?>
-					<h1><?php the_title();?></h1>
+					<h1 class="white"><?php the_title();?></h1>
 				<?php endif;?>
 		
 			</div>

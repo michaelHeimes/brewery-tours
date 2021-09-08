@@ -68,6 +68,7 @@ jQuery( document ).ready(function($) {
 				slidesToScroll: 1,
 				arrows: true,
 				dots: false,
+				rows: 0,
 				prevArrow: $('.slick-prev'),			
 				nextArrow: $('.slick-next'),
 			});
@@ -102,12 +103,10 @@ jQuery( document ).ready(function($) {
 		if( $('.cube').length && $('.cta-bottom').length ) {
 			
 			$(window).on("load resize", function() {
-		
+
 				$('.cta-bottom').each(function(){
-					var $cube = $(this).closest('.cta-element').siblings().find('.cube');
-					
-					console.log($cube);
-								
+					var $cube = $(this).closest('.cta-element').parent().siblings().find('.cube');
+													
 					var $cubeHeight = $($cube).outerHeight();
 									
 					$(this).css('min-height', $cubeHeight);			
