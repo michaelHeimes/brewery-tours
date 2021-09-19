@@ -144,6 +144,11 @@ jQuery( document ).ready(function($) {
 			
 		}
 	}	
+	
+	_app.block_hacks = function() {
+		$('.wp-block-button__link').addClass('button');
+		$('.wp-block-button__link').addClass('banner-btn');
+	}
 			
 	_app.init = function() {
 		
@@ -156,6 +161,7 @@ jQuery( document ).ready(function($) {
 		_app.cubes();
 		_app.cta_bottom_height();
 		_app.dot_slider();
+		_app.block_hacks();
 	}
 
 

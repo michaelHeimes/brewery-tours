@@ -12,7 +12,7 @@ get_header(); ?>
 		<div class="inner-content">
 	
 		    <main role="main">
-				<div class="grid-container fluid gray-bg">
+				<div class="gray-bg">
 				    
 				    <?php get_template_part('parts/content', 'tour-page-nav');?>
 				    
@@ -32,7 +32,7 @@ get_header(); ?>
 	
 					
 				    <section class="text-icons">
-					    <div class="grid-container fluid blue-bg stretch">
+					    <div class="grid-container fluid blue-bg">
 						    <div class="grid-x grid-padding-x">
 								<div class="top centered-dashes cell small-12">
 									<div class="grid-x grid-padding-x">
@@ -160,13 +160,13 @@ get_header(); ?>
 				    </section>
 					    
 					    
-				    <section class="resrouces plan-element">
+				    <section class="resources plan-element">
 					   	<div class="grid-container">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12">		
 									<div class="wrap-440 text-center">			    
 					    				<?php 
-										$image = get_field('hotels_icon');
+										$image = get_field('resources_icon');
 										if( !empty( $image ) ): ?>
 										<div class="icon-wrap">
 										    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
@@ -303,7 +303,8 @@ get_header(); ?>
 								
 					   	</div>
 				    </section>
-				    				  
+
+					<?php get_template_part('parts/content', 'ig-feed');?>				    				  
 				    				    			
 					<?php get_template_part('parts/content', 'cta-section');?>
 					

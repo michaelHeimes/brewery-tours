@@ -12,12 +12,20 @@
 				padding-top: 1.1rem;
 			}
 		}
+		
+		.top {
+			padding-bottom: 2.75rem;
+		}
 
 		.bottom {
 			.cell {
 				margin-bottom: 3rem;
 				.icon-wrap {
 					margin-bottom: .85rem;
+					min-height: 64px;
+				    display: flex;
+				    justify-content: center;
+				    align-items: flex-end;
 				}
 				.copy-wrap {
 					max-width: 280px;
@@ -130,18 +138,17 @@
 				padding: 0 1.375rem;
 			}
 		}
-		
-		h5 {
-			margin-bottom: 2.85rem;
-		}
-		
+
 		.detail-rows {
-			.cell div {
-				height: 100%;
-				border-top: 1px solid $light-gray;
-				border-bottom: 1px solid $light-gray;
-				padding: .75rem 0 1.3rem;
+			padding-top: 2.85rem;
+			.cell  {
 				margin-top: -1px;
+				div {
+					height: 100%;
+					border-top: 1px solid $light-gray;
+					border-bottom: 1px solid $light-gray;
+					padding: .75rem 0 1.3rem;
+				}
 			}
 		}
 		
@@ -152,6 +159,7 @@
 	}
 	
 	.plan {
+		overflow: hidden;
 		.btn-wrap {
 			padding-top: .6rem;
 			padding-bottom: 1rem;

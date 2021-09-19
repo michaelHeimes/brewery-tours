@@ -5,11 +5,11 @@
 ?>
 
 <p class="byline">
-	<?php
-	printf( __( 'Posted on %1$s by %2$s - %3$s', 'jointswp' ),
-		get_the_time( __('F j, Y', 'jointswp') ),
-		get_the_author_posts_link(),
-		get_the_category_list(', ')
-	);
+	<?php $post_date = get_the_date( 'F j Y' ); echo $post_date;?>
+	/
+	<?php $categories = get_the_category();
+		if ( ! empty( $categories ) ) {
+			echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+		};
 	?>
 </p>	

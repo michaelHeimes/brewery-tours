@@ -68,7 +68,7 @@ get_header(); ?>
 
 				    <?php if( have_rows('slider_callout_card') ):?>
 						<?php while ( have_rows('slider_callout_card') ) : the_row();?>	
-					    <div class="grid-container">
+					    <div class="callout-card-wrap grid-container">
 						    <div class="grid-x grid-padding-x align-right">
 							    <div class="cell shrink">
 								    <div class="callout-card card-shadow">
@@ -85,13 +85,17 @@ get_header(); ?>
 						<?php endwhile;?>
 					<?php endif;?>
 				    
-					<div class="grid-container fluid hide-overflow">
+					<div class="svgs-wrap grid-container fluid hide-overflow">
 						<div class="grid-x grid-padding-x align-middle">
-							<div class="cell small-12 medium-7">
-								<?php get_template_part('parts/content', 'trail-icons');?>
+							<div class="cell small-12 tablet-7">
+								<div class="trail-icons-wrap">
+									<?php get_template_part('parts/content', 'trail-icons');?>
+								</div>
 							</div>
-							<div class="cell small-12 medium-5">
-								<?php get_template_part('parts/content', 'topo');?>
+							<div class="cell small-12 tablet-5 show-for-tablet">
+								<div class="topo-wrap">
+									<?php get_template_part('parts/content', 'topo');?>
+								</div>
 							</div>							
 						</div>
 					</div>
@@ -323,6 +327,10 @@ get_header(); ?>
 						</div>
 					</div>
 			    </section>
+			    
+				<?php get_template_part('parts/content', 'ig-feed');?>
+			    
+			    <div class="footer-particles"></div>
 			    				
 				<?php get_template_part('parts/content', 'cta-section');?>
 			    					

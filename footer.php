@@ -130,6 +130,9 @@
 									<?php joints_review_links();?>
 								</div>
 							</div>
+							
+							<div class="source-org copyright cell small-12">&copy; Copyright <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a href="https://proprdesign.com/" target="_blank">Made by Propr Design</a></div>
+
 						</div>
 						
 					</div>

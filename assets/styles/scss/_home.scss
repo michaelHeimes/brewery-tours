@@ -1,5 +1,10 @@
 .home {
 	
+	section {
+		position: relative;
+		z-index: 1;
+	}
+	
 	.banner {
 		min-height: 687px;
 		
@@ -22,16 +27,39 @@
 	.slider {
 		padding-top: 200px;
 		overflow: hidden;
-	    height: 800px;
 	    position: relative;
 	    background: url(../images/mtn-bg.svg);
 	    background-size: cover;
 	    background-position: 50% 0%;
 	    margin-top: -120px;		
+	    
+	    .slider-nav button {
+		    svg {
+			    path {
+				    transition: all .25s ease;
+			    }
+		    }
+		    &:hover {
+			    background-color: transparent;
+			    
+			    svg {
+				    path {
+					    stroke: $white;
+				    }
+			    }
+			    
+		    }
+	    }
+	    
+	    
 	}
 	
 	.s1 {
-		padding-bottom: 10.75rem;
+		padding-bottom: 6rem;
+		
+		@include breakpoint(medium) {
+			padding-bottom: 10.75rem;
+		}
 		
 		.callout-card {
 			position: relative;
@@ -39,6 +67,8 @@
 			margin-top: -49px;
 			padding-right: .7rem;
 			padding: 2.5rem 3.25rem;
+			max-width: 90vw;
+			
 			h3 {
 				margin-bottom: 0;
 			}
@@ -47,11 +77,35 @@
 			}
 		}
 		
+		.svgs-wrap {
+			padding-top: 4rem;
+			padding-bottom: 2rem;
+			
+			@include breakpoint(tablet) {
+				padding: 0;
+				margin-top: -14rem;
+				margin-bottom: -10rem;
+			}
+					
+			.trail-icons-wrap {
+				svg {
+					margin-left: -1.25rem;
+					margin-right: -1.25rem;
+				}
+			}
+						
+		}
+		
 		h2 {
-			font-size: rem-calc(50);
+			font-size: rem-calc(38);
 			line-height: 1.32;
 			color: $brand-blue;
 			margin-bottom: .45em;
+			
+			@include breakpoint(medium) {
+				font-size: rem-calc(50);
+			}
+			
 		}
 		
 		.link-wrap {
@@ -67,8 +121,13 @@
 			margin-bottom: -3.25rem;
 			
 			h2 {
-				font-size: rem-calc(72);
+				font-size: rem-calc(60);
 				line-height: 1.1388;
+				
+				@include breakpoint(medium) {
+					font-size: rem-calc(72);
+				}
+				
 			}
 			
 		}

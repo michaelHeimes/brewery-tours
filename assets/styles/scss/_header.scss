@@ -93,6 +93,11 @@ header.header {
 							letter-spacing: .05px;
 							font-weight: 500;
 							text-transform: uppercase;
+							
+						&:hover {
+							text-decoration: underline;
+						}
+							
 						}
 					}
 				}
@@ -186,12 +191,26 @@ header.header {
 										align-items: center;
 										justify-content: center;
 										
+									&:before {
+										content: '';
+										position: absolute;
+										z-index: 1;
+										top: 0;
+										left: 0;
+										right: 0;
+										bottom: 0;
+										background-color: $brand-blue;
+										opacity: .4;
+									}	
+									
+										
 										span.icon {
 											display: none;
 										}
 										
 										span.title-icon-wrap {
 											position: relative;
+											z-index: 1;
 										}
 										
 									&:hover {
@@ -313,21 +332,23 @@ header.header {
 	    display: none !important;
     }
     
-	.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
-		border: 0;
-		right: 25px;
-		width: 10px;
-		height: 5px;
-		border: 0;
-		background-size: contain;
-	    background-position: center;
-	    background-repeat: no-repeat;						
-		background-image: url(../images/mobile-chev-down.svg);
+	.accordion-menu .is-accordion-submenu-parent button {
+	
+		&:after {
+			border: 0;
+			right: 25px;
+			width: 10px;
+			height: 5px;
+			border: 0;
+			background-size: contain;
+		    background-position: center;
+		    background-repeat: no-repeat;						
+			background-image: url(../images/mobile-chev-down.svg);
+			transition: transform .3s ease;
+		}
 	}
     
     ul#offcanvas-nav.menu {
-	    border-top: 1px solid $light-gray;
-	    border-bottom: 1px solid $light-gray;
 	    li {
 		    a {
 			    color: $white;
@@ -335,14 +356,18 @@ header.header {
 	    }
 	    
 	    >li {
+		    margin-top: -1px;
+		    border-top: 1px solid $light-gray;
+		    border-bottom: 1px solid $light-gray; 
+			    
 		    > a {
+			    width: 100%;
 			    font-size: rem-calc(20);
 			    line-height: 1.2;
 			    font-family: $header-font-family-alt;
 			    letter-spacing: .05px;
 			    padding: .9rem 2.3rem;		
-			    border-top: 1px solid $light-gray;
-			    border-bottom: 1px solid $light-gray;    
+   
 		    }
 		    
 		&.active {
@@ -358,13 +383,19 @@ header.header {
 		}
 		    
 		    .submenu {
-				border-bottom: 1px solid $light-gray;
-			    
+			    background-color: $brand-navy;
 			    li {
 				    a {
+					    font-size: rem-calc(16);
 					    font-weight: 600;
 					    line-height: 1.1875;
 					    padding: .7rem 2.55rem;
+					    
+					&:hover {
+						background-color: #CAD3EA;
+						color: $brand-blue;
+					}
+					    
 				    }
 			    }
 		    }
@@ -377,6 +408,7 @@ header.header {
 	    padding: 1.2rem 1.2rem 1.3rem;
 	    .button {
 		    width: 100%;
+		    border-radius: 0;
 	    }
     }
     

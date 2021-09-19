@@ -1,0 +1,33 @@
+.bold-centered-text {
+	font-family: $header-font-family;
+	font-size: rem-calc(32);
+	color: $brand-navy;
+	font-weight: bold;
+	padding-top: 2.3rem;
+	padding-bottom: 3rem;
+	
+	@include breakpoint(medium) {
+		font-size: rem-calc(45);
+	}
+	
+}
+
+.large-blue-copy {
+	
+	h2 {
+		margin-bottom: .85em;
+	}
+	
+	p,
+	ul,
+	ol {
+		color: $brand-blue;
+		font-size: rem-calc(18);
+		line-height: 2.04;
+		
+		@include breakpoint(medium) {
+			font-size: rem-calc(21);
+		}
+		
+	}
+}

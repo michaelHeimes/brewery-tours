@@ -19,13 +19,43 @@
             "endpoint": 0
         },
         {
+            "key": "field_614642b5169b2",
+            "label": "Banner Type",
+            "name": "banner_type",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Image",
+                "video": "Video"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_6137a0e39a014",
             "label": "Image",
             "name": "banner_image",
             "type": "image",
             "instructions": "1267px X 560px or 2534px X 1120px for 2x",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_614642b5169b2",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -41,6 +71,30 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_614642da169b3",
+            "label": "Video",
+            "name": "banner_video",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_614642b5169b2",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
         },
         {
             "key": "field_6137a0e39a020",
@@ -622,5 +676,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631035635
+    "modified": 1631994615
 }

@@ -1,13 +1,13 @@
 {
-    "key": "group_6123f2814df17",
-    "title": "Banner",
+    "key": "group_613d400ff31ca",
+    "title": "Posts",
     "fields": [
         {
-            "key": "field_6123f287708ff",
-            "label": "Background Image",
-            "name": "banner_background_image",
+            "key": "field_613d4023a5743",
+            "label": "Thumbnail",
+            "name": "thumbnail",
             "type": "image",
-            "instructions": "",
+            "instructions": "473px X 473x or 946px X 946px for 2x",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -32,12 +32,12 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
+                "value": "post"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -47,5 +47,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1631994538
+    "modified": 1631404191
 }

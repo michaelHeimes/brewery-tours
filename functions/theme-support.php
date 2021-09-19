@@ -7,7 +7,11 @@ function joints_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Default thumbnail size
-	set_post_thumbnail_size(125, 125, true);
+// 	set_post_thumbnail_size(466, 466, true);
+	
+	// Add custom Image Sizes
+		add_image_size( 'blog-archive', 220, 180, true );
+
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );

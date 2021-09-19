@@ -12,7 +12,7 @@ get_header(); ?>
 		<div class="inner-content">
 	
 		    <main role="main">
-				<div class="grid-container fluid gray-bg">
+				<div class="gray-bg">
 				    
 				    <?php get_template_part('parts/content', 'tour-page-nav');?>
 				    
@@ -20,11 +20,49 @@ get_header(); ?>
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12">
-									<?php 
-									$image = get_field('banner_image');
-									if( !empty( $image ) ): ?>
-									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-									<?php endif; ?>	    
+																		
+									<?php if( get_field('banner_type') == 'video' ):?>
+									
+										<div class="responsive-embed widescreen">
+
+											<?php
+											
+											// Load value.
+											$iframe = get_field('banner_video');
+											
+											// Use preg_match to find iframe src.
+											preg_match('/src="(.+?)"/', $iframe, $matches);
+											$src = $matches[1];
+											
+											// Add extra parameters to src and replcae HTML.
+											$params = array(
+											    'controls'  => 0,
+											    'hd'        => 1,
+											    'autohide'  => 1
+											);
+											$new_src = add_query_arg($params, $src);
+											$iframe = str_replace($src, $new_src, $iframe);
+											
+											// Add extra attributes to iframe HTML.
+											$attributes = 'frameborder="0"';
+											$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+											
+											// Display customized HTML.
+											echo $iframe;
+											?>
+
+										</div>
+
+									<?php else:?>
+								
+										<?php 
+										$image = get_field('banner_image');
+										if( !empty( $image ) ): ?>
+										    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+										<?php endif; ?>	  
+									
+									<?php endif;?>
+
 								</div>
 							</div>
 						</div>
@@ -32,7 +70,7 @@ get_header(); ?>
 	
 					
 				    <section class="text-icons">
-					    <div class="grid-container fluid blue-bg stretch">
+					    <div class="grid-container fluid blue-bg">
 						    <div class="grid-x grid-padding-x">
 								<div class="top centered-dashes cell small-12">
 									<div class="grid-x grid-padding-x">
@@ -142,16 +180,20 @@ get_header(); ?>
 								<div class="cell small-12">
 									<div class="inner white-bg wrap-930">
 										<div class="grid-container">
+											
+											<?php if ( $price = get_field('td_price')):?>
 											<div class="grid-x grid-padding-x">
 												<div class="cell text-center small-12">
 													<div class="price alt-heading-font">
-														<div class="inner cube grid-x align-middle align-center"><sup>$</sup><?php the_field('td_price');?></div>
+														<div class="inner cube grid-x align-middle align-center"><sup>$</sup><?php echo $price;?></div>
 													</div>
 													
 													<h5><?php the_field('td_price_for');?></h5>
 													
 												</div>
 											</div>
+											<?php endif; ?>
+											
 											<div class="detail-rows grid-x grid-padding-x">
 												<?php if( have_rows('td_detail_rows') ):?>
 													<?php while ( have_rows('td_detail_rows') ) : the_row();?>	
@@ -302,7 +344,8 @@ get_header(); ?>
 							</div>
 						</div>
 				    </section>
-					  
+
+					<?php get_template_part('parts/content', 'ig-feed');?>					  
 				    				    			
 					<?php get_template_part('parts/content', 'cta-section');?>
 					

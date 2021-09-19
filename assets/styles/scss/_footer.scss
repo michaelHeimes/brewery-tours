@@ -26,10 +26,14 @@
 }
 footer.footer {
 	position: relative;
-	padding-bottom: 5.4rem;
-	
+		
 	a {
 		color: $white;
+		
+	&:hover {
+		text-decoration: underline;
+	}
+		
 	}
 	p {
 		font-size: rem-calc(17);
@@ -115,6 +119,7 @@ footer.footer {
 	}
 	
 	#towns-dropdown {
+		border-top: 0;
 		a {
 			display: block;
 			width: 100%;
@@ -128,6 +133,7 @@ footer.footer {
 			padding: .8rem 1.35rem .6rem;
 			
 		&:hover {
+			text-decoration: none;
 			background-color: #CAD3EA;
 		}
 			
@@ -178,6 +184,7 @@ footer.footer {
 		.social {
 			
 			h3 {
+				color: $white;
 				font-family: $body-font-family;
 				font-size: rem-calc(17);
 				line-height: 2.058;
@@ -198,6 +205,12 @@ footer.footer {
 			li {
 				a {
 					padding: 0;
+					transition: opacity .25s ease;
+					
+				&:hover {
+					opacity: .5;
+				}
+					
 				}	
 			
 			&:not(:last-child) {
@@ -206,6 +219,13 @@ footer.footer {
 				
 			}	
 		}
+		
+		.source-org {
+			padding-top: 2rem;
+			padding-bottom: 5.4rem;
+
+		}
+		
 	}
 	
 }

@@ -37,11 +37,17 @@ require_once(get_template_directory().'/functions/acf-json.php');
 // ACF json
 require_once(get_template_directory().'/functions/acf-options.php');
 
+// ACF Block
+require_once(get_template_directory().'/functions/acf-blocks.php');
+
 // Disable Gutenberg
 require_once(get_template_directory().'/functions/disable-gutenberg.php'); 
 
 // Adds Breadcrumbs
 require_once(get_template_directory().'/functions/breadcrumbs.php'); 
+
+// Exclude Featured Post
+require_once(get_template_directory().'/functions/exclude-featured.php'); 
 
 // Add Page Slug to Body Class
 // require_once(get_template_directory().'/functions/page-slug-body-class');
