@@ -7,7 +7,7 @@
             "label": "Background Image",
             "name": "banner_background_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "Home page: 1400px by 812px\r\nBack pages: 1400px by 337px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "id",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -47,5 +47,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1631994538
+    "modified": 1632246370
 }

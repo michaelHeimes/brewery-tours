@@ -7,11 +7,21 @@ function joints_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Default thumbnail size
-// 	set_post_thumbnail_size(466, 466, true);
+	set_post_thumbnail_size(233, 233, true);
 	
 	// Add custom Image Sizes
-		add_image_size( 'blog-archive', 220, 180, true );
-
+		add_image_size( 'nav-dropdown', 280, 174, true );	
+		add_image_size( 'home-banner', 1400, 812, true );	
+		add_image_size( 'banner', 1400, 337, true );
+		add_image_size( 'tour-card', 613, 613, true );
+		add_image_size( 'featured-blog', 473, 473, true );
+		add_image_size( 'blog-archive', 233, 233, true );
+		add_image_size( 'featured-breweries', 576, 373, true );
+		add_image_size( 'book-badge-cta', 851, 499, true );
+		add_image_size( 'landing-plan', 940, 570, true );
+		add_image_size( 'slider', 9999, 501, false);
+		add_image_size( 'page-banner', 1266, 560, true );
+		add_image_size( 'cta-fw', 1266, 593, true );
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );

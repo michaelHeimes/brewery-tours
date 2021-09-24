@@ -1,8 +1,35 @@
 <div class="banner has-bg grid-container fluid">
-<?php if( is_home() || is_single() || is_archive() ):?>
-	<div class="bg" style="background-image: url(<?php the_field('blog_banner_image', 'option');?>)"></div>
+	
+<?php if( is_front_page() ):?>
+
+	<?php
+		$imgID_hb = get_field('banner_background_image');
+		$imgSize_hb = "home-banner";
+		$imgArr_hb = wp_get_attachment_image_src( $imgID_hb, $imgSize_hb );
+	
+	?>
+	<div class="bg" style="background-image: url(<?php echo $imgArr_hb[0]; ?> )"></div>
+
+
+<!-- 	<div class="bg home-banner" style="background-image: url(<?php the_field('banner_background_image');?>)"></div> -->
+<?php elseif( is_home() || is_single() || is_archive() ):?>
+
+	<?php
+		$imgID = get_field('blog_banner_image', 'option');
+		$imgSize = "banner";
+		$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+	
+	?>
+	<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> )"></div>
+
 <?php else:?>
-	<div class="bg" style="background-image: url(<?php the_field('banner_background_image');?>)"></div>
+	<?php
+		$imgID = get_field('banner_background_image');
+		$imgSize = "banner";
+		$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+	
+	?>
+	<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> )"></div>
 <?php endif;?>
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">

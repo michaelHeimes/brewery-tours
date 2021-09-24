@@ -37,7 +37,7 @@ get_header(); ?>
 														<div class="right cell small-12 tablet-5">
 															<?php 
 															if( !empty( $image ) ): ?>
-															    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+															    <img src="<?php echo $image['sizes']['featured-blog']; ?>" width="<?php echo $image['sizes']['featured-blog-width']; ?>" height="<?php echo $image['sizes']['featured-blog-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 															<?php endif; ?>
 														</div>    										
 														
@@ -144,7 +144,15 @@ get_header(); ?>
 								<?php while ( have_rows('maling_list_signup', 'option') ) : the_row();?>	
 								<div class="cta-element cell small-12">
 									<div class="inner cta-bottom text-center has-bg">
-										<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
+														
+										<?php
+											$imgID = get_sub_field('background_image');
+											$imgSize = "cta-fw";
+											$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+										
+										?>
+										
+										<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>																				
 										<div class="text-wrap">
 											<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 											
@@ -160,7 +168,7 @@ get_header(); ?>
 								<?php endwhile;?>
 							</div>
 						</div>
-						<?php endif;?>
+						<?php endif;?>	
 					    
 				    </main> <!-- end #main -->
 			

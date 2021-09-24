@@ -313,7 +313,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
@@ -407,7 +407,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
@@ -479,7 +479,7 @@
             "label": "Blog Banner Image",
             "name": "blog_banner_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "1400px by 337px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -487,7 +487,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "id",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -553,7 +553,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
@@ -695,5 +695,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631997400
+    "modified": 1632251619
 }

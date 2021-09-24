@@ -23,7 +23,7 @@ get_header(); ?>
 									<?php 
 									$image = get_field('banner_image');
 									if( !empty( $image ) ): ?>
-									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									    <img src="<?php echo $image['sizes']['page-banner']; ?>" width="<?php echo $image['sizes']['page-banner-width']; ?>" height="<?php echo $image['sizes']['page-banner-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 									<?php endif; ?>	    
 								</div>
 							</div>
@@ -109,50 +109,52 @@ get_header(); ?>
 							
 							<?php if( have_rows('hotels_places') ):?>
 							<div class="places grid-x grid-padding-x">
-								<?php while ( have_rows('hotels_places') ) : the_row();?>	
-								
-								<?php if( have_rows('single_place') ):?>
-									<?php while ( have_rows('single_place') ) : the_row();?>	
-
-									<div class="single cell small-6">
-										<div class="grid-x grid-padding-x">
-											<div class="img-wrap cell small-12 tablet-6">
-												<?php 
-												$image = get_sub_field('image');
-												if( !empty( $image ) ): ?>
-												    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-												<?php endif; ?>												
-											</div>
-											<div class="cell small-12 tablet-6">
-												<h6 class="orange"><?php the_sub_field('type');?></h6>
-												<h3 class="alt-heading-font"><?php the_sub_field('name');?></h3>
-												<div class="address"><?php the_sub_field('address');?></div>
-												<?php if( $footnote = get_sub_field('footnote') ):?>
-												<div class="footnote"><?php echo $footnote;?></div>
-												<?php endif;?>
-												
-												<?php 
-												$link = get_sub_field('link');
-												if( $link ): 
-												    $link_url = $link['url'];
-												    $link_title = $link['title'];
-												    $link_target = $link['target'] ? $link['target'] : '_self';
-												    ?>
-												<div class="link-wrap">
-												    <a class="blue" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+								<div class="cell small-12 large-10 large-offset-1">
+									<div class="grid-x grid-padding-x">
+										<?php while ( have_rows('hotels_places') ) : the_row();?>	
+										
+											<?php if( have_rows('single_place') ):?>
+												<?php while ( have_rows('single_place') ) : the_row();?>	
+			
+												<div class="single cell small-6">
+													<div class="grid-x grid-padding-x">
+														<div class="img-wrap cell small-12 tablet-6 xlarge-shrink">
+															<?php 
+															$image = get_sub_field('image');
+															if( !empty( $image ) ): ?>
+															    <img src="<?php echo $image['sizes']['blog-archive']; ?>" width="<?php echo $image['sizes']['blog-archive-width']; ?>" height="<?php echo $image['sizes']['blog-archive-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
+															<?php endif; ?>												
+														</div>
+														<div class="cell small-12 tablet-6 xlarge-auto">
+															<h6 class="orange"><?php the_sub_field('type');?></h6>
+															<h3 class="alt-heading-font"><?php the_sub_field('name');?></h3>
+															<div class="address"><?php the_sub_field('address');?></div>
+															<?php if( $footnote = get_sub_field('footnote') ):?>
+															<div class="footnote"><?php echo $footnote;?></div>
+															<?php endif;?>
+															
+															<?php 
+															$link = get_sub_field('link');
+															if( $link ): 
+															    $link_url = $link['url'];
+															    $link_title = $link['title'];
+															    $link_target = $link['target'] ? $link['target'] : '_self';
+															    ?>
+															<div class="link-wrap">
+															    <a class="blue" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+															</div>
+															<?php endif; ?>
+															
+														</div>										
+													</div>
 												</div>
-												<?php endif; ?>
-												
-											</div>										
-										</div>
+											
+												<?php endwhile;?>
+											<?php endif;?>
+																				
+										<?php endwhile;?>
 									</div>
-								
-									<?php endwhile;?>
-								<?php endif;?>
-								
-
-							
-								<?php endwhile;?>
+								</div>
 							</div>
 							<?php endif;?>
 								
@@ -221,7 +223,7 @@ get_header(); ?>
 													<?php 
 													$image = get_field('fb_image');
 													if( !empty( $image ) ): ?>
-													    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													    <img src="<?php echo $image['sizes']['featured-breweries']; ?>" width="<?php echo $image['sizes']['featured-breweries-width']; ?>" height="<?php echo $image['sizes']['featured-breweries-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 													<?php endif; ?>
 												</div>											
 											</div>
@@ -254,50 +256,52 @@ get_header(); ?>
 							
 							<?php if( have_rows('discounts_places') ):?>
 							<div class="places grid-x grid-padding-x">
-								<?php while ( have_rows('discounts_places') ) : the_row();?>	
-								
-								<?php if( have_rows('single_place') ):?>
-									<?php while ( have_rows('single_place') ) : the_row();?>	
-
-									<div class="single cell small-6">
-										<div class="grid-x grid-padding-x">
-											<div class="img-wrap cell small-12 tablet-6">
-												<?php 
-												$image = get_sub_field('image');
-												if( !empty( $image ) ): ?>
-												    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-												<?php endif; ?>												
-											</div>
-											<div class="cell small-12 tablet-6">
-												<h6 class="orange"><?php the_sub_field('type');?></h6>
-												<h3 class="alt-heading-font"><?php the_sub_field('name');?></h3>
-												<div class="address"><?php the_sub_field('address');?></div>
-												<?php if( $footnote = get_sub_field('footnote') ):?>
-												<div class="footnote"><?php echo $footnote;?></div>
-												<?php endif;?>
-												
-												<?php 
-												$link = get_sub_field('link');
-												if( $link ): 
-												    $link_url = $link['url'];
-												    $link_title = $link['title'];
-												    $link_target = $link['target'] ? $link['target'] : '_self';
-												    ?>
-												<div class="link-wrap">
-												    <a class="blue" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+								<div class="cell small-12 large-10 large-offset-1">
+									<div class="grid-x grid-padding-x">
+										<?php while ( have_rows('discounts_places') ) : the_row();?>	
+										
+										<?php if( have_rows('single_place') ):?>
+											<?php while ( have_rows('single_place') ) : the_row();?>	
+		
+											<div class="single cell small-6">
+												<div class="grid-x grid-padding-x">
+													<div class="img-wrap cell small-12 tablet-6 xlarge-shrink">
+														<?php 
+														$image = get_sub_field('image');
+														if( !empty( $image ) ): ?>
+														   <img src="<?php echo $image['sizes']['blog-archive']; ?>" width="<?php echo $image['sizes']['blog-archive-width']; ?>" height="<?php echo $image['sizes']['blog-archive-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
+														<?php endif; ?>												
+													</div>
+													<div class="cell small-12 tablet-6 xlarge-auto">
+														<h6 class="orange"><?php the_sub_field('type');?></h6>
+														<h3 class="alt-heading-font"><?php the_sub_field('name');?></h3>
+														<div class="address"><?php the_sub_field('address');?></div>
+														<?php if( $footnote = get_sub_field('footnote') ):?>
+														<div class="footnote"><?php echo $footnote;?></div>
+														<?php endif;?>
+														
+														<?php 
+														$link = get_sub_field('link');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div class="link-wrap">
+														    <a class="blue" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+														</div>
+														<?php endif; ?>
+														
+													</div>										
 												</div>
-												<?php endif; ?>
-												
-											</div>										
-										</div>
+											</div>
+										
+											<?php endwhile;?>
+										<?php endif;?>
+																			
+										<?php endwhile;?>
 									</div>
-								
-									<?php endwhile;?>
-								<?php endif;?>
-								
-
-							
-								<?php endwhile;?>
+								</div>
 							</div>
 							<?php endif;?>
 								

@@ -28,7 +28,7 @@ get_header(); ?>
 								    <div class="overflow-slider">
 							            <?php foreach( $images as $image ): ?>
 							                <div>
-							                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							                    <img src="<?php echo $image['sizes']['slider']; ?>" width="auto" height="<?php echo $image['sizes']['slider-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 							                    <p><?php echo esc_html($image['caption']); ?></p>
 							                </div>
 							            <?php endforeach; ?>
@@ -144,7 +144,7 @@ get_header(); ?>
 											<?php 
 											$image = get_sub_field('tc_image');
 											if( !empty( $image ) ): ?>
-											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+											    <img src="<?php echo $image['sizes']['blog-archive']; ?>" width="<?php echo $image['sizes']['blog-archive-width']; ?>" height="<?php echo $image['sizes']['blog-archive-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 											<?php endif; ?>										
 										</div>
 										
@@ -206,7 +206,7 @@ get_header(); ?>
 													<?php 
 													$image = get_sub_field('tc_image');
 													if( !empty( $image ) ): ?>
-													    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+														<img src="<?php echo $image['sizes']['tour-card']; ?>" width="<?php echo $image['sizes']['tour-card-width']; ?>" height="<?php echo $image['sizes']['tour-card-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 													<?php endif; ?>										
 												</div>
 												

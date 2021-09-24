@@ -166,7 +166,7 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 				// vars
 				$icon = get_field('icon', $item);
 				$bg_img = get_field('dropdown_background_image', $item);
-				$size = 'full';
+				$size = 'nav-dropdown';
 				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
 						
 				// append icon

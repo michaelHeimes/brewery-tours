@@ -4,7 +4,6 @@
 	align-items: flex-start;
 	color: $white;
 	padding-top: 1.7rem;
-    padding-bottom: 10rem;
 
 	.grid-container {
 		width: 100%;
@@ -18,4 +17,8 @@
 		
 	}
 	
+}
+
+.home .banner {
+    padding-bottom: 10rem;	
 }

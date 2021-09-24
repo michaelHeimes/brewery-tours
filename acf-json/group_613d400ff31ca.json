@@ -7,7 +7,7 @@
             "label": "Thumbnail",
             "name": "thumbnail",
             "type": "image",
-            "instructions": "473px X 473x or 946px X 946px for 2x",
+            "instructions": "473px X 473x",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -47,5 +47,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1631404191
+    "modified": 1632234240
 }

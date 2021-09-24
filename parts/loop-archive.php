@@ -14,7 +14,7 @@
 					<?php 
 					$image = get_field('thumbnail');
 					if( !empty( $image ) ): ?>
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					    <img src="<?php echo $image['sizes']['blog-archive']; ?>" width="<?php echo $image['sizes']['blog-archive-width']; ?>" height="<?php echo $image['sizes']['blog-archive-height']; ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
 					<?php endif; ?>
 				</a>
 			</div>
@@ -37,3 +37,5 @@
 		</div>
 	</div>    						
 </article> <!-- end article -->
+
+

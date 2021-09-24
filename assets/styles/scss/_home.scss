@@ -25,13 +25,18 @@
 	}
 	
 	.slider {
+		height: 517px;
 		padding-top: 200px;
 		overflow: hidden;
 	    position: relative;
 	    background: url(../images/mtn-bg.svg);
 	    background-size: cover;
 	    background-position: 50% 0%;
-	    margin-top: -120px;		
+	    margin-top: -120px;	
+	    
+	&.slick-initialized {
+		height: auto;
+	}	
 	    
 	    .slider-nav button {
 		    svg {
@@ -89,8 +94,28 @@
 					
 			.trail-icons-wrap {
 				svg {
+					overflow: visible;
 					margin-left: -1.25rem;
 					margin-right: -1.25rem;
+					
+					g#Group_812 {
+						.ticks > g {
+							opacity: 0;
+						}
+					}
+					
+					g#Group_814 {
+						g {
+							
+						&.scale-up,
+						&.move-down {
+							opacity: 0;
+						}
+							
+						}
+												
+					}
+					
 				}
 			}
 						

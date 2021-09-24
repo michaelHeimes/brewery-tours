@@ -7,7 +7,16 @@
 				<?php while ( have_rows('cta_left_square', 'option') ) : the_row();?>	
 				<div class="cta-element cell small-12 medium-6">
 					<div class="inner cube text-center has-bg grid-x align-middle align-center">
-						<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
+						
+						<?php
+							$imgID = get_sub_field('background_image');
+							$imgSize = "tour-card";
+							$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+						
+						?>
+						
+						<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
+						
 						<div class="text-wrap">
 							<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 							
@@ -36,7 +45,15 @@
 				<?php while ( have_rows('cta_right_square', 'option') ) : the_row();?>	
 				<div class="cta-element has-form cell small-12 medium-6">
 					<div class="inner cube text-center has-bg grid-x align-middle align-center">
-						<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
+						
+						<?php
+							$imgID = get_sub_field('background_image');
+							$imgSize = "tour-card";
+							$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+						
+						?>
+						
+						<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
 
 						<div class="text-wrap">
 							<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
@@ -60,7 +77,16 @@
 			<?php while ( have_rows('cta_bottom_rectangle') ) : the_row();?>	
 			<div class="cta-element cell small-12">
 				<div class="inner cta-bottom text-center has-bg grid-x align-middle align-center">
-					<div class="bg" style="background-image: url(<?php the_sub_field('background_image');?>)"></div>
+					
+						<?php
+							$imgID = get_sub_field('background_image');
+							$imgSize = "cta-fw";
+							$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+						
+						?>
+						
+						<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
+											
 					<div class="text-wrap">
 						<h2 class="alt-heading-font white"><?php the_sub_field('heading');?></h2>
 						
