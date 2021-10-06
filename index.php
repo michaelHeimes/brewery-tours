@@ -44,7 +44,18 @@ get_header(); ?>
 														<div class="left cell small-12 tablet-7">
 															<div class="title"><h2 class="white big"><?php echo esc_html( $title ); ?></h2></div>
 															<div class="bottom">
-																<p class="excerpt"><?php echo $excerpt; ?></p>
+																<p class="excerpt">
+																	<?php if( has_excerpt() ):?>
+																		<p class="excerpt">
+																			<?php echo the_excerpt();?>
+																		</p>
+																		<div class="rm-link">
+																			<a class="excerpt-read-more blue" href="<?php echo the_permalink();?>" title="Read <?php echo the_title();?>">Read More</a>
+																		</div>
+																	<?php else: ?>
+																		<?php echo $excerpt; ?>
+																	<?php endif;?>
+																</p>
 																<div class="btn-wrap"><a class="button" href="<?php echo esc_url( $permalink ); ?>">Continue reading</a></div>
 															</div>
 														</div>

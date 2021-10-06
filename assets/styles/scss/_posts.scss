@@ -20,7 +20,11 @@
 			p {
 				@include breakpoint(tablet) {
 					padding-right: 57px;
-				}
+				}				
+			}
+			
+			.rm-link {
+				display: none;
 			}
 			
 			.btn-wrap {

@@ -92,7 +92,7 @@ get_header(); ?>
 									<?php get_template_part('parts/content', 'trail-icons');?>
 								</div>
 							</div>
-							<div class="cell small-12 tablet-5 show-for-tablet">
+							<div class="cell small-12 tablet-5">
 								<div class="topo-wrap">
 									<?php get_template_part('parts/content', 'topo');?>
 								</div>

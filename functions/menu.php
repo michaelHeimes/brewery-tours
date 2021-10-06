@@ -199,6 +199,12 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 				$blue_icon = get_field('icon_blue', $item);
 				$size = 'full';
 				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
+				$hide = get_field('hide_from_on-page_navigation', $item);
+				
+				// append hide class
+				if( $hide ) {
+					$item->classes = 'hide';
+				}		
 						
 				// append icon
 				if( $icon ) {

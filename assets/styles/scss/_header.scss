@@ -190,7 +190,7 @@ header.header {
 										display: flex;
 										align-items: center;
 										justify-content: center;
-										
+																				
 									&:before {
 										content: '';
 										position: absolute;
@@ -213,8 +213,15 @@ header.header {
 											z-index: 1;
 										}
 										
+															    
+									    .bg {
+										    transition: all .3s ease;
+									    }
+										
 									&:hover {
-			
+										.bg {
+											filter: brightness(0.5);
+										}			
 									}
 										
 									}
@@ -391,9 +398,13 @@ header.header {
 					    line-height: 1.1875;
 					    padding: .7rem 2.55rem;
 					    
+					    .bg {
+						    transition: all .3s ease;
+					    }
+					    
 					&:hover {
 						background-color: #CAD3EA;
-						color: $brand-blue;
+						color: $brand-blue;						
 					}
 					    
 				    }

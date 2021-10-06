@@ -68,7 +68,7 @@ function joints_gallery_style($css) {
 function joints_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '<div><a class="excerpt-read-more blue" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointswp') . get_the_title($post->ID).'">'. __('Read More', 'jointswp') .'</a></div>';
+// return '<div class="rm-link"><a class="excerpt-read-more blue" href="'. get_permalink($post->ID) . '" title="'. __('Read ', 'jointswp') . get_the_title($post->ID).'">'. __('Read More', 'jointswp') .'</a></div>';
 }
 
 add_filter( 'excerpt_length', function($length) {

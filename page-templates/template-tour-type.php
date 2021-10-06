@@ -87,7 +87,7 @@ get_header(); ?>
 										
 										<div class="bottom cell small-12">
 											<div class="grid-container">
-												<div class="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3">
+												<div class="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 align-center">
 													<?php if( have_rows('icon_cards') ):?>
 														<?php while ( have_rows('icon_cards') ) : the_row();?>	
 														<?php if( have_rows('single_card') ):?>
@@ -126,7 +126,7 @@ get_header(); ?>
 				    </section>
 					    
 				    
-				    <section class="featured-breweries">
+				    <section class="featured-breweries<?php if(get_field('fb_hide_this_element')):?> hide<?php endif; ?>">
 					   	<div class="grid-container">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12">
@@ -174,7 +174,7 @@ get_header(); ?>
 				    </section>
 				    
 
-				    <section class="book-cta">
+				    <section class="book-cta<?php if(get_field('fb_hide_this_element')):?> hide<?php endif; ?>">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12">

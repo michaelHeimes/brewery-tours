@@ -22,16 +22,14 @@
 				margin-bottom: 3rem;
 				.icon-wrap {
 					margin-bottom: .85rem;
-					min-height: 64px;
+					height: 55px;
 				    display: flex;
 				    justify-content: center;
 				    align-items: flex-end;
 				    
-/*
 				    img {
-					    max-height: 3.39rem;
+					    max-height: 100%;
 				    }
-*/
 				    
 				}
 				.copy-wrap {
@@ -154,7 +152,10 @@
 					height: 100%;
 					border-top: 1px solid $light-gray;
 					border-bottom: 1px solid $light-gray;
-					padding: .75rem 0 1.3rem;
+					padding: 1rem 0;
+					display: flex;
+				    align-items: center;
+				    justify-content: center;
 				}
 			}
 		}

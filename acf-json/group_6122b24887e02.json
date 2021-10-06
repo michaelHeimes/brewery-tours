@@ -3,6 +3,25 @@
     "title": "Main Navigation",
     "fields": [
         {
+            "key": "field_6153496ffddb1",
+            "label": "Hide From On-page Navigation",
+            "name": "hide_from_on-page_navigation",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6122b37280372",
             "label": "Dropdown Background Image",
             "name": "dropdown_background_image",
@@ -92,5 +111,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632246995
+    "modified": 1632848259
 }

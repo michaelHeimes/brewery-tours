@@ -153,80 +153,82 @@ jQuery( document ).ready(function($) {
 	
 	_app.trail_animation = function() {
 		
+		if( $('.trail-icons-wrap').length ) {
 		
-		gsap.to( 'g#Group_814 g.scale-up', { scale:0.5, x: '25%', y: '25%', autoAlpha:0 });
+			gsap.to( 'g#Group_814 g.scale-up', { scale:0.5, x: '25%', y: '25%', autoAlpha:0 });
+			
+			gsap.to( 'g#Group_814 g.move-down', { y: -70, autoAlpha:0 });
+			
+			var trailIconsWrap = $('.trail-icons-wrap');
+			
+			var $tickGroup1 = $('g.g-1 > g');
+			var $tickGroup2 = $('g.g-2 > g');
+			var $tickGroup3 = $('g.g-3 > g');
+			var $tickGroup4 = $('g.g-4 > g');		
+			var $pa = $('g#pa');
+			var $beer = $('g#beer');
+			var $pin = $('g#pin');
+			var $car = $('g#car');
+			var $ped = $('g#ped');
+			
+			var $fadeDuration = .2;
+			var $tickStagger = .07;
+			
+			var tl = gsap.timeline({
+				    scrollTrigger: {
+			      trigger: trailIconsWrap,
+			      start: "bottom bottom",
+			    }
+			});
+	
+			tl.to( $tickGroup1, 0, {
+				autoAlpha: 1,
+				stagger: {
+					each: $tickStagger,
+					ammount: 0
+				}	
+			});
+					
+			tl.to($pa, {autoAlpha: 1, duration: $fadeDuration}, .6);
+			tl.to($pa, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
+			
+			tl.to( $tickGroup2, 0, {
+				autoAlpha: 1,
+				stagger: {
+					each: $tickStagger,
+					ammount: 0
+				}
+			}, "-=.8");
+			
+			tl.to($beer, {autoAlpha: 1, duration: $fadeDuration}, 1.4);
+			tl.to($beer, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
+	
+			tl.to($pin, {autoAlpha: 1, duration: 2}, 1.4);
+			tl.to($pin, {y: 0, duration: 1, ease: "bounce.out"}, "<");
+			
+			tl.to( $tickGroup3, 0, {
+				autoAlpha: 1,
+				stagger: {
+					each: $tickStagger,
+					ammount: 0
+				}
+			}, "-=1.9");
+					
+			tl.to($car, {autoAlpha: 1, duration: $fadeDuration}, 2.2);
+			tl.to($car, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
+			
+			tl.to( $tickGroup4, 0, {
+				autoAlpha: 1,
+				stagger: {
+					each: $tickStagger,
+					ammount: 0
+				}
+			}, "-=1.1");
+	
+			tl.to($ped, {autoAlpha: 1, duration:  $fadeDuration}, 3);
+			tl.to($ped, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
 		
-		gsap.to( 'g#Group_814 g.move-down', { y: -70, autoAlpha:0 });
-		
-		var trailIconsWrap = $('.trail-icons-wrap');
-		
-		var $tickGroup1 = $('g.g-1 > g');
-		var $tickGroup2 = $('g.g-2 > g');
-		var $tickGroup3 = $('g.g-3 > g');
-		var $tickGroup4 = $('g.g-4 > g');		
-		var $pa = $('g#pa');
-		var $beer = $('g#beer');
-		var $pin = $('g#pin');
-		var $car = $('g#car');
-		var $ped = $('g#ped');
-		
-		var $fadeDuration = .2;
-		var $tickStagger = .07;
-		
-		var tl = gsap.timeline({
-			    scrollTrigger: {
-		      trigger: trailIconsWrap,
-		      start: "bottom bottom",
-		    }
-		});
-
-		tl.to( $tickGroup1, 0, {
-			autoAlpha: 1,
-			stagger: {
-				each: $tickStagger,
-				ammount: 0
-			}	
-		});
-				
-		tl.to($pa, {autoAlpha: 1, duration: $fadeDuration}, .6);
-		tl.to($pa, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
-		
-		tl.to( $tickGroup2, 0, {
-			autoAlpha: 1,
-			stagger: {
-				each: $tickStagger,
-				ammount: 0
-			}
-		}, "-=.8");
-		
-		tl.to($beer, {autoAlpha: 1, duration: $fadeDuration}, 1.4);
-		tl.to($beer, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
-
-		tl.to($pin, {autoAlpha: 1, duration: 2}, 1.4);
-		tl.to($pin, {y: 0, duration: 1, ease: "bounce.out"}, "<");
-		
-		tl.to( $tickGroup3, 0, {
-			autoAlpha: 1,
-			stagger: {
-				each: $tickStagger,
-				ammount: 0
-			}
-		}, "-=1.9");
-				
-		tl.to($car, {autoAlpha: 1, duration: $fadeDuration}, 2.2);
-		tl.to($car, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
-		
-		tl.to( $tickGroup4, 0, {
-			autoAlpha: 1,
-			stagger: {
-				each: $tickStagger,
-				ammount: 0
-			}
-		}, "-=1.1");
-
-		tl.to($ped, {autoAlpha: 1, duration:  $fadeDuration}, 3);
-		tl.to($ped, {scale:1, x: 0, y: 0, duration: 1, ease: "back.out(2.5)"}, "<");
-
+		}
 
 	}
 			

@@ -25,7 +25,6 @@
 	}
 	
 	.slider {
-		height: 517px;
 		padding-top: 200px;
 		overflow: hidden;
 	    position: relative;
@@ -68,6 +67,7 @@
 		
 		.callout-card {
 			position: relative;
+			z-index: 1;
 			background-color: $white;
 			margin-top: -49px;
 			padding-right: .7rem;
@@ -83,20 +83,65 @@
 		}
 		
 		.svgs-wrap {
+			position: relative;
 			padding-top: 4rem;
 			padding-bottom: 2rem;
-			
+
 			@include breakpoint(tablet) {
 				padding: 0;
 				margin-top: -14rem;
+				margin-bottom: -16rem;
+			}
+			
+			@include breakpoint(tablet) {
 				margin-bottom: -10rem;
+			}
+			
+			.topo-wrap {
+				position: absolute;
+			    width: 100%;
+			    left: auto;
+			    right: -30%;
+			    top: -21rem;
+			    height: 0;
+			    
+			    @include breakpoint(tablet) {
+				    position: static;
+				    height: auto;
+			    }
+			    
+			    svg {
+				    max-width: 100%;
+				    
+				    @include breakpoint(tablet) {
+					    max-width: none;
+				    }
+				    
+			    }
+			    
 			}
 					
 			.trail-icons-wrap {
+				position: relative;
+				z-index: 1;
+				
 				svg {
+					max-width: 100%;
 					overflow: visible;
 					margin-left: -1.25rem;
 					margin-right: -1.25rem;
+					margin-top: -70px;
+					margin-bottom: -70px;
+					
+					@media (min-width: 500px) {
+						margin-top: -30px;
+						margin-bottom: -30px;						
+					}
+					
+					@include breakpoint(medium) {
+						margin-top: 0;
+						margin-bottom: 0;
+					}
 					
 					g#Group_812 {
 						.ticks > g {

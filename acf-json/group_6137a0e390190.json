@@ -248,6 +248,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_615cec22b0f96",
+            "label": "Hide This Element",
+            "name": "fb_hide_this_element",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6137a0e39a046",
             "label": "Heading",
             "name": "fb_heading",
@@ -341,6 +360,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_615cecaeef1ab",
+            "label": "Hide This Element",
+            "name": "td_hide_this_element_copy",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6137a0e39a063",
@@ -676,5 +714,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631994615
+    "modified": 1633479871
 }
