@@ -122,13 +122,15 @@ header.header {
 						    display: flex;
 						    align-items: center;							
 							> a {
+								display: flex;
+								align-items: center;
 								border-right: 1px solid $light-gray;
 								font-family: $header-font-family-alt;
 								color: $white;
 								font-size: rem-calc(20);
 								text-transform: uppercase;
 								letter-spacing: .05px;
-								padding: .5rem 1.65rem .5rem 2.75rem;
+								padding: .5rem 1.65rem;
 								height: 100%;
 								
 								@include breakpoint(large) {
@@ -146,10 +148,8 @@ header.header {
 						&.menu-item-has-children {
 							margin-bottom: 0;
 						
-							a {
-								display: flex;
-								align-items: center;
-								
+							> a {
+								padding: .5rem 1.65rem .5rem 2.75rem;
 								&:after {
 									position: static;
 									margin-left: .82rem;
